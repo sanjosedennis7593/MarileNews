@@ -1,0 +1,39 @@
+<ion-view>
+
+	<ion-content class="event-background">
+
+
+<div class="list card" id = "fed" ng-repeat="event in eventlist | orderBy:'-EventDate'">
+
+				<a href="#/app/eventcontent"  id="job-text" ng-click="sendData(event)">
+
+
+  <div class="item item-divider" id = "headbkg">
+  <div class="item item-avatar" >
+   
+    <h2 id = "eventit">{{event.EventTitle}}</h2>
+    <p id = "eventdat">{{event.EventDate}}</p>
+      </div>
+  </div>
+
+
+  <div class="item item-body" >
+  <center>
+    <img src="{{event.Image}}" width="70%" height="250" id = "magecon" >
+    </center>
+  </div>
+
+
+  <a class="item item-icon" href="#">
+    
+  <h2 id = "links"> Tap to view Details</h2> 
+  </a>
+</a>
+
+
+</div>
+
+
+	</ion-content>
+
+</ion-view>

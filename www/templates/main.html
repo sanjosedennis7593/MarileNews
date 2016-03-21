@@ -1,0 +1,119 @@
+<ion-view view-title=" MarileNews">
+
+     <div class="tabs legend-div">
+
+
+ <center>
+ 	
+  <div class="latest-news bar-dark">
+  <marquee>Latest News: <span class="title-spacing" ng-repeat="latest in latest" ng-click="openModal(latest.Title,latest.Description,latest.Image,latest.DatePosted)" repeat-loading>- {{latest.Title}} -&nbsp;</span></marquee>
+  </div>
+
+
+</center>
+
+</div>
+
+	<ion-content class="div-main">
+
+	<!--	<div class="div-main"> -->
+
+
+				<div class="row">
+					<div class="row">
+						<div class="col col-50">
+						 <a href="#/app/home" id="anchor-div">
+								 <center>
+							  <div class="div-buttons mid-color1">
+							  	<div class="main-content">
+							<span class="step size-96">
+     						 <i class="ion-ios-paper" id = "maincons1" ></i>
+    							</span>
+							 	<h5 id = "maintxt">News</h5>
+							 	</div>
+							 </div>
+			
+							 </center>
+							</a>
+						</div>
+
+						<div class="col col-50">
+						 <a href="#/app/events" id="anchor-div">
+								 <center>
+							 <div class="div-buttons mid-color2">
+							 	<div class="main-content">
+							<span class="step size-96">
+     						 <i class="ion-speakerphone" id = "maincons2" ></i>
+    							</span>
+							 	<h5 id = "maintxt" >Events</h5>
+							 	</div>
+							 </div>
+			
+							 </center>
+							</a>
+						</div>
+
+				</div>
+
+					
+		</div>
+
+
+
+			<div class="row>">
+				<div class="row">
+						<div class="col col-50">
+						 <a href="#/app/traffic" id="anchor-div">
+								 <center>
+							  <div class="div-buttons mid-color1">
+							  	<div class="main-content">
+							<span class="step size-96">
+     						 <i class="ion-android-car" id = "maincons3" ></i>
+    							</span>
+							 	<h5 id = "maintxt" >Traffic</h5>
+							 	</div>
+							 </div>
+			
+							 </center>
+							</a>
+						</div>
+						<div class="col col-50">
+						 <a href="#/app/weatherlist" id="anchor-div">
+								 <center>
+							 <div class="div-buttons mid-color2">
+							 	<div class="main-content">
+							<span class="step size-96">
+     						 <i class="ion-android-cloud" id = "maincons4" ></i>
+    							</span>
+							 	<h5 id = "maintxt" >Weather</h5>
+							 	</div>
+							 </div>
+			
+							 </center>
+							</a>
+						</div>
+
+				</div>
+
+
+
+					</div>
+<!--
+					<div class="row">
+					<div class="col">
+					<center>
+					<a href="https://www.facebook.com/">
+						<img src="img/logo.png" width="75" height="75">
+					</a>
+					</center>
+					</div>
+					</div>
+
+	</div>				
+-->
+		
+
+
+
+	</ion-content>
+</ion-view>

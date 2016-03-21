@@ -1,0 +1,17 @@
+{
+  "name": "Marilenews",
+  "app_id": "1aa23fe5",
+  "proxies": [
+    {
+      "path": "/four_day_forecast",
+      "proxyUrl": "http://noah.dost.gov.ph/four_day_forecast"
+    }
+  ],
+  "browsers": [
+    {
+      "platform": "android",
+      "browser": "crosswalk",
+      "version": "12.41.296.5"
+    }
+  ]
+}

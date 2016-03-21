@@ -1,0 +1,68 @@
+<ion-view>
+  
+  <ion-content class="feedbackbg">
+  
+<div class="list">
+ 
+  <div class="padding">
+    <center>
+    <h3 class="i-chat"><i class="ion-person-stalker"> Interactive Chat</i><h3>
+    <h5 class="i-chat">Register an Account</h5>
+   <div class="list">
+    <div class="list">
+        <label>
+    <span class="note-label">Note: Password length should be greater than 5 and less than 15 characters.</span>
+  
+  </label>
+    </div>
+
+ <label class="item item-input item-floating-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username" class="input-form" ng-model="user.username" maxlength="15">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password" ng-model="user.password" maxlength="15">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Confirm Password</span>
+    <input type="password" placeholder="Confirm Password" ng-model="user.conpassword"  maxlength="15">
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Lastname</span>
+    <input type="text" placeholder="Lastname" class="input-form" ng-model="user.lastname" maxlength="15">
+  </label>
+   
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Firstname</span>
+       <input type="text" placeholder="Firstname" class="input-form" ng-model="user.firstname" maxlength="15">
+
+  </label>
+   
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Initial</span>
+        <input type="text" placeholder="Initial" class="input-form" ng-model="user.initial" maxlength="5" ng-init="user.initial=''">
+  </label>
+
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Security Question</span>
+        <input type="text" placeholder="Security Question" class="input-form" ng-model="user.question" maxlength="35" ng-init="user.question=''">
+  </label>
+
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Security Answer</span>
+        <input type="text" placeholder="Security Answer" class="input-form" ng-model="user.answer" maxlength="35" ng-init="user.answer=''">
+  </label>
+
+ 
+</div>
+  </center>
+  <center>
+        <a class="button button-block button-positive" ng-click="registerAccount(user.username)" ng-disabled="user.password!=user.conpassword || user.username=='' || user.username ==null || user.lastname == null || user.firstname == null | user.security==null || user.security == '' || user.answer == null || user.answer == ''">Register</a>
+    </center>
+
+      </div>
+</div>
+
+  </ion-content>
+</ion-view>

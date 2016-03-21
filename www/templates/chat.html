@@ -1,0 +1,97 @@
+<ion-view>
+
+ <div class="list fb-profile">
+
+
+    <center>
+
+   
+     <center> <h2><b>Personal Information</b></h2></center>
+     <h4><b>{{loggedInUser.Lastname}} {{loggedInUser.Firstname}} {{loggedInUser.Initial}}</b></h4>
+    
+      <input type="button" class="logout-button" value="Edit Information" ng-click="openModal(loggedInUser)">
+      <input type="button" class="logout-button" value="Logout" ng-click="logoutFB()">
+
+</center>
+<center>
+ <h5 class="conversation">Conversation</h5>
+</center>
+</div>
+  <ion-scroll class="conversation-content" width="50%">
+
+  <!--
+ <div class="card">
+
+    <a class="item item-avatar chat-profile" href="#">
+     <img src='{{currentUser.facebook.profileImageURL}}' width="50" height="50">
+     <h2><b>{{currentUser.facebook.displayName}}</b></h2>
+     <p>https://www.facebook.com/{{currentUser.facebook.cachedUserProfile.id}}</p>
+    </a>
+
+</div>
+-->
+
+<!--
+
+
+   <ion-scroll class="conversation-wrapper chat-box"> 
+ 
+          <div ng-repeat="message in chatMessage | orderBy:'+ServerTime'">
+           
+             <a class="item item-avatar chat-bubble left"  ng-if="message.Sender==loggedInUser.Username">
+                 <h2><b>{{message.Sender}}</b></h2>
+                <p class="msg-chat">{{message.Message}}</p>
+                <p class="msg-date">{{message.Date}}</p>
+             </a>
+             <br>
+                <a class="item item-avatar chat-bubble right pio-msg" ng-if="message.Sender!=loggedInUser.Username">
+                 <h2><b>{{message.Sender}}</b></h2>
+                <p class="msg-chat">{{message.Message}}</p>
+                <p class="msg-date">{{message.Date}}</p>
+             </a>
+
+          
+          </div>
+
+          <br><br><br>
+
+
+</ion-scroll>
+
+-->
+
+
+ 
+  
+ 
+   <div ng-repeat="message in chatMessage | orderBy:'+ServerTime'">
+           
+             <a class="item item-avatar chat-bubble left" ng-if="message.Sender==loggedInUser.Username">
+                 <h2><b>{{message.Sender}}</b></h2>
+                <p class="msg-chat">{{message.Message}}</p>
+                <p class="msg-date">{{message.Date}}</p>
+             </a>
+          
+                <a class="item item-avatar chat-bubble right pio-msg" ng-if="message.Sender!=loggedInUser.Username">
+                 <h2><b>{{message.Sender}}</b></h2>
+                <p class="msg-chat">{{message.Message}}</p>
+                <p class="msg-date">{{message.Date}}</p>
+             </a>
+
+   </div>
+          <br>
+
+
+
+    
+
+</ion-scroll>
+
+   <div class="tabs chat-div" >
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="Type your message" class="send-message" ng-model="data.message" />
+      </label>
+      <button class="button footer-btn send-button-chat" ng-disabled="data.message==null || data.message==''" ng-click="sendMessage()">SEND</button>
+     </div>
+
+</ion-view>

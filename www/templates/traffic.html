@@ -1,0 +1,54 @@
+<ion-view>
+   
+    
+
+    <ion-content>
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadTrafficData()">
+  </ion-refresher>
+ 
+  <div class="bar bar-header bar-royal header-pos" >
+    
+   <div class="col traffic-label"><center>L - Light</center></div>
+    <div class="col traffic-label"><center> M - Moderate</center></div>
+     <div class="col traffic-label"><center> H - Heavy</center></div>
+</div>
+  
+  <div class="bar bar-header bar-dark header-pos" >
+    
+   <div class="col traffic-label"><center>Northbound</center></div>
+    <div class="col traffic-label"><center>Location</center></div>
+     <div class="col traffic-label"><center>Southbound</center></div>
+</div>
+       <div id="traffic-pane" height="200">
+       			
+       			<ul class="list">
+    				<li class="item animated bounceInLeft" ng-repeat="traffic in trafficArray | orderBy:'-MilitaryTime'" >
+    					<div class="row traffic-content">
+    					   <div class="col nbound traffic-type" ng-class="{'light': traffic.Northbound == 'L'
+                ,'moderate': traffic.Northbound == 'M','heavy': traffic.Northbound == 'H'}" ng-click="showNorthRoute('{{traffic.NorthAlternativeRoute}}')"><center><h1>{{traffic.Northbound}}</h1></center></div>
+
+
+    					    <div class="col col-50 traffic-loc"><center><span class="traffic-details">{{traffic.Location}}</span><br><span class="traffic-details">{{traffic.Barangay}}</span><br>
+                    <span class="traffic-details">As of {{traffic.Time}}</span><!--<br>{{traffic.Date}} <br>--><!-- {{traffic.Time}}</center>--></div>
+
+
+    					     <div class="col sbound traffic-type" ng-class="{'light': traffic.Southbound == 'L'
+                ,'moderate': traffic.Southbound == 'M','heavy': traffic.Southbound == 'H'}" ng-click="showSouthRoute('{{traffic.SouthAlternativeRoute}}')"><center><h1>{{traffic.Southbound}}</h1></center></div>	
+
+    					</div>
+
+   					</li>
+
+
+
+				</ul>
+
+
+       </div>
+
+    
+
+    </ion-content>
+</ion-view>

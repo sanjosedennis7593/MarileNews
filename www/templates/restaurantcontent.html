@@ -1,0 +1,33 @@
+<ion-view view-title="Restaurant">
+	<ion-content class="tour-content-background" zooming="true" direction="xy">
+		
+			<div class="card">
+				<h2>{{restaurantObject.Name}}</h2>
+			</div>
+			<div class="card">
+				<img src="{{restaurantObject.Image}}" class="restaurant-image" width="100%">
+				
+			</div>
+	
+			<div class="card description-content">
+				<h5 align="justify"><b>{{restaurantObject.Location}}</b></h5><br>
+				<p align="justify">{{restaurantObject.Description}}</p>
+			</div>
+<!--
+				<div class="card description-content" ng-click="showRouteMap(restaurantObject.RouteImage)">
+					<center>
+				<h3 align="justify">Show Route Map</h3>
+					</center>
+			</div>
+-->
+<!--
+				<div class="card description-content">
+				<center>
+				<h4 align="justify"><a href="#" ng-click="redirectUrl(restaurantObject.Url)" target="_blank">Visit Website</a></h4>
+				</center>
+			</div>
+	-->
+	</ion-content>
+</ion-view>
+
+

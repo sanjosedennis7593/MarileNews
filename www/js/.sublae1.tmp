@@ -1,0 +1,311 @@
+angular.module('starter.controllers', ['ionic','firebase','ngCordova'])
+
+.controller('AppCtrl', function($scope, $ionicModal, $ionicPopover, $timeout) {
+    // Form data for the login modal
+    $scope.loginData = {};
+    $scope.isExpanded = false;
+    $scope.hasHeaderFabLeft = false;
+    $scope.hasHeaderFabRight = false;
+
+    var navIcons = document.getElementsByClassName('ion-navicon');
+    for (var i = 0; i < navIcons.length; i++) {
+        navIcons.addEventListener('click', function() {
+            this.classList.toggle('active');
+        });
+    }
+
+    ////////////////////////////////////////
+    // Layout Methods
+    ////////////////////////////////////////
+
+    $scope.hideNavBar = function() {
+        document.getElementsByTagName('ion-nav-bar')[0].style.display = 'none';
+    };
+
+    $scope.showNavBar = function() {
+        document.getElementsByTagName('ion-nav-bar')[0].style.display = 'block';
+    };
+
+    $scope.noHeader = function() {
+        var content = document.getElementsByTagName('ion-content');
+        for (var i = 0; i < content.length; i++) {
+            if (content[i].classList.contains('has-header')) {
+                content[i].classList.toggle('has-header');
+            }
+        }
+    };
+
+    $scope.setExpanded = function(bool) {
+        $scope.isExpanded = bool;
+    };
+
+    $scope.setHeaderFab = function(location) {
+        var hasHeaderFabLeft = false;
+        var hasHeaderFabRight = false;
+
+        switch (location) {
+            case 'left':
+                hasHeaderFabLeft = true;
+                break;
+            case 'right':
+                hasHeaderFabRight = true;
+                break;
+        }
+
+        $scope.hasHeaderFabLeft = hasHeaderFabLeft;
+        $scope.hasHeaderFabRight = hasHeaderFabRight;
+    };
+
+    $scope.hasHeader = function() {
+        var content = document.getElementsByTagName('ion-content');
+        for (var i = 0; i < content.length; i++) {
+            if (!content[i].classList.contains('has-header')) {
+                content[i].classList.toggle('has-header');
+            }
+        }
+
+    };
+
+    $scope.hideHeader = function() {
+        $scope.hideNavBar();
+        $scope.noHeader();
+    };
+
+    $scope.showHeader = function() {
+        $scope.showNavBar();
+        $scope.hasHeader();
+    };
+
+    $scope.clearFabs = function() {
+        var fabs = document.getElementsByClassName('button-fab');
+        if (fabs.length && fabs.length > 1) {
+            fabs[0].remove();
+        }
+    };
+})
+
+.controller('LoginCtrl', function($scope, $timeout, $stateParams) {
+    $scope.$parent.clearFabs();
+    $timeout(function() {
+        $scope.$parent.hideHeader();
+    }, 0);
+    ionic.material.ink.displayEffect();
+})
+
+.controller('FriendsCtrl', function($scope, $stateParams, $timeout) {
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.$parent.setHeaderFab('left');
+
+    // Delay expansion
+    $timeout(function() {
+        $scope.isExpanded = true;
+        $scope.$parent.setExpanded(true);
+    }, 300);
+
+    // Set Motion
+    ionic.material.motion.fadeSlideInRight();
+
+    // Set Ink
+    ionic.material.ink.displayEffect();
+})
+
+.controller('HomeCtrl', function($scope, $stateParams, $timeout,$ionicModal,$http,$q) {
+    // Set Header
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = false;
+    $scope.$parent.setExpanded(false);
+    $scope.$parent.setHeaderFab(false);
+   
+
+
+    $ionicModal.fromTemplateUrl('newscontent.html', {
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+  $scope.openModal = function() {
+    $scope.modal.show();
+  };
+  $scope.closeModal = function() {
+ 
+
+ $scope.modal.hide();
+
+
+  };
+
+  $scope.showWeatherInfo = function (){
+
+    function fetchWeatherInfo(){
+
+    }
+  }
+  //Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+
+
+    $ionicModal.fromTemplateUrl('searchform.html',{
+      scope:$scope
+    }).then(function(modal){
+      $scope.searchbox = modal
+    })
+
+    $scope.showSearchModal = function(){
+     $scope.searchbox.show();
+    }
+
+
+    $scope.closeSearchModal = function(){
+      $scope.searchbox.hide();
+
+    }
+
+
+
+  
+    // Set Motion
+    $timeout(function() {
+        ionic.material.motion.slideUp({
+            selector: '.slide-up'
+        });
+    }, 300);
+
+    $timeout(function() {
+        ionic.material.motion.fadeSlideInRight({
+            startVelocity: 3000
+        });
+    }, 700);
+
+    // Set Ink
+    ionic.material.ink.displayEffect();
+})
+
+.controller('ActivityCtrl', function($scope, $stateParams, $timeout) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(true);
+    $scope.$parent.setHeaderFab('right');
+
+    $timeout(function() {
+        ionic.material.motion.fadeSlideIn({
+            selector: '.animate-fade-slide-in .item'
+        });
+    }, 200);
+
+    // Activate ink for controller
+    ionic.material.ink.displayEffect();
+})
+
+
+
+.controller('VideosCtrl', function($scope, $stateParams, $timeout) {
+    $scope.$parent.showHeader();
+    $scope.$parent.clearFabs();
+    $scope.isExpanded = true;
+    $scope.$parent.setExpanded(true);
+    $scope.$parent.setHeaderFab(false);
+
+    // Activate ink for controller
+    ionic.material.ink.displayEffect();
+
+    ionic.material.motion.pushDown({
+        selector: '.push-down'
+    });
+    ionic.material.motion.fadeSlideInRight({
+        selector: '.animate-fade-slide-in .item'
+    });
+
+})
+.controller('WeatherCtrl', ['$scope', 'weatherService', function($scope, weatherService) {
+
+        function fetchWeather(){
+
+            weatherService.getWeather().then(function(data){
+                
+                $scope.weather = data;
+
+
+            });
+
+        }
+
+
+
+    fetchWeather();
+}])
+
+.controller('NewsCtrl',function($scope,$stateParams,$timeout){
+    $scope.newslist = [
+    { title: 'Check out the Latest News',date:'April 10 2015' , desc: '‪#‎MarilenyoDisiplinado‬ ‪#‎CleanandGreen‬ ‪#‎MMDA‬', img:'https://scontent-sea.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/p235x350/11075039_906894546036200_4488257905806133619_n.jpg?oh=3b5fda9095ab30b1f9a3a5a61f8b0904&oe=55A8841C', id: 1 },
+    { title: 'Oplan Lakbay Alalay 2015' ,date:'April 10 2015', desc: 'Para sa lahat nang nagnanais na kumuha ng pagsusulit sa Pambayang Dalubhasaan ng Marilao, magkakaroon po ng extension ang pagsasagawa ng Entrance Exam, ito ay hanggang sa Abril 7, 2015. Maaari po lamang na magsadya muna sa Guidance Office ng Pambayang Dalubhasaan ng Marilao (PDM), bago ang nabanggit na Petsa. Maraming Salamat po.' ,img:'https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xap1/v/t1.0-9/11080941_906892312703090_5979010133702664410_n.jpg?oh=74858d49615fb333fc9e25dd80a6cdb3&oe=55BBB165&__gda__=1437832633_605ff3445a5fc18dd2f3b9b3aa61a18e',id: 2 },
+    { title: 'Oplan Lakbay Alalay 2015', date:'April 10 2015', desc: 'Be updated about the weekly news from marilao',img:'https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10447113_906894539369534_6994281204474777869_n.jpg?oh=383dce131dc1aa870668f3a13e751e65&oe=55A77271&__gda__=1436289737_fd054f9af65f428f7611d08cf46adc3d' ,id: 3 },
+    { title: 'Oplan Lakbay Alalay 2015',date:'April 10 2015', desc: 'Weekly Ulat ng Bayan',img:'https://fbcdn-sphotos-a-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10456255_906894529369535_2142824951718253419_n.jpg?oh=21d2e82951cb93af227594684c67ab62&oe=559C50FB&__gda__=1436274755_a7768716b68fdb7635bd598f6aa77410' ,id: 4 },
+    { title: 'Oplan Lakbay Alalay 2015',date:'April 10 2015', desc: 'Brings you the latest news',img:'https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/1174542_566818170043841_874841287_n.png?oh=73afda766b7b377ece424770071b2c09&oe=55B207D7&__gda__=1438143390_13ffc4588cbd3caa761ef628f5f21f03' ,id: 5 },
+    { title: 'Job Advertisment', date:'April 10 2015', desc: 'Looking for a jobs? Click here', img:'https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xpf1/v/t1.0-9/1174542_566818170043841_874841287_n.png?oh=73afda766b7b377ece424770071b2c09&oe=55B207D7&__gda__=1438143390_13ffc4588cbd3caa761ef628f5f21f03',id: 6 }
+  ];
+  $scope.category = [
+    {catID:'Cat0001' , catName: 'Edukasyon', catContent: {title: 'Check out the Latest News',date:'April 10 2015' , desc: '‪#‎MarilenyoDisiplinado‬ ‪#‎CleanandGreen‬ ‪#‎MMDA‬', img:'https://scontent-sea.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/p235x350/11075039_906894546036200_4488257905806133619_n.jpg?oh=3b5fda9095ab30b1f9a3a5a61f8b0904&oe=55A8841C', id: 1}},
+    {catID:'Cat0002' , catName: 'Batang Marilenyo', catContent: {title: 'Program',date:'April 10 2015' , desc: '‪#‎MarilenyoDisiplinado‬ ‪#‎CleanandGreen‬ ‪#‎MMDA‬', img:'https://scontent-sea.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/p235x350/11075039_906894546036200_4488257905806133619_n.jpg?oh=3b5fda9095ab30b1f9a3a5a61f8b0904&oe=55A8841C', id: 1}},
+    {catID:'Cat0003' , catName: 'Agrikultura', catContent: {title: 'Services',date:'April 10 2015' , desc: '‪#‎MarilenyoDisiplinado‬ ‪#‎CleanandGreen‬ ‪#‎MMDA‬', img:'https://scontent-sea.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/p235x350/11075039_906894546036200_4488257905806133619_n.jpg?oh=3b5fda9095ab30b1f9a3a5a61f8b0904&oe=55A8841C', id: 1}}
+  ];
+
+
+})
+
+.controller('FetchNews', function($scope,$firebase,$firebaseObject){
+    $scope.data = {};    
+    $scope.newsID = {};
+
+
+    var ref = new Firebase("https://marilenewsmobileapp.firebaseio.com/News/NewsID");
+
+    ref.on("value", function (snapshot){
+      $scope.data = snapshot.val();
+
+        var newsRef = new Firebase("https://marilenewsmobileapp.firebaseio.com/News/Image/"+Object.keys($scope.data));
+
+            newsRef.on("value", function (snapshot){
+                $scope.newsID = snapshot.val();
+
+            });
+      
+    });
+
+
+
+
+})
+
+.controller('CategoryCtrl', function($scope,$firebase,$ionicSlideBoxDelegate){
+
+    $scope.cat = {};
+
+    var catRef = new Firebase("https://marilenewsmobileapp.firebaseio.com/News/Category");
+
+    catRef.on("value", function (snapshot){
+
+        $scope.cat = snapshot.val();
+ 
+    });
+    
+    $ionicSlideBoxDelegate.update();
+})
+
+;
+

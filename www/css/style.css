@@ -1,0 +1,2892 @@
+/* General
+==================================*/
+
+@font-face {
+  font-family: "Helvetica Neue LT Std";
+  src: url('../lib/ionic/fonts/HelveticaNeueLTStdHvCn.eot');
+  src: url('../lib/ionic/fonts/HelveticaNeueLTStdHvCn.eot?#iefix') format('embedded-opentype'),
+  url('../lib/ionic/fonts/HelveticaNeueLTStdHvCn.woff') format('woff'),
+  url('../lib/ionic/fonts/HelveticaNeueLTStdHvCn.ttf') format('truetype'),
+  url('../lib/ionic/fonts/HelveticaNeueLTStdHvCn.svg') format('svg');
+  font-weight: 200;
+
+}
+
+
+  #map-canvas {
+        height:85%;
+        margin: 0px;
+        padding: 0px
+      }
+
+.officials-div{
+  color:black;
+}
+
+
+/* Utilities
+==================================*/
+.title-bordered {
+    border-top: solid 2px #bbb;
+    padding-top: 30px;
+}
+
+p {
+    color: #555;
+    margin: 0 0 25px;
+}
+
+
+.scroll {
+    height: 100%;
+}
+.desc-box{
+    padding:10px;
+}
+
+/* Menu
+==================================*/
+.menu .bar.bar-header.expanded {
+    transition: all .5s ease-in-out;
+}
+
+.menu-open .bar.bar-header.expanded {
+    background-color: #222;
+}
+
+.menu h2 {
+    bottom: 0;
+    font-size: 18px;
+    left: 16px;
+    position: absolute;
+}
+
+.menu .avatar {
+    height: 88px;
+    width: 88px;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+    content: "\f2ca";
+}
+
+#home-img{
+    width:100%;
+    height:100%;
+}
+
+.gay{
+
+    background-color: yellow;
+}
+/* Login
+==================================*/
+.app-icon {
+    background-color: #fff;
+    background: url('../img/crown.jpg') center;
+    background-size: cover;
+    border-radius: 50%;
+    height: 125px;
+    margin: 0 auto;
+    width: 125px;
+}
+
+.social-login {
+    position: fixed;
+    bottom: 0;
+}
+
+.header-pos{
+   position:relative;
+   border-bottom: 5px solid red;
+    margin-bottom:2px;
+
+}
+
+.traffic-label-content{
+
+  padding-top: 5px;
+  display: inline-block;
+  font-size: 30px;
+}
+
+.traffic-label-heading{
+  height:32px;
+    position:relative;
+    top:-10px;
+   
+    background-color: red;
+  color:white;
+}
+
+.nlist h1,h2,h3,h4,h5,h6,p,ul li{
+    color:black;
+}
+
+/* -------------------------------- WEATHER FORECAST ---------------------------------------*/
+
+.weather-pane{
+    padding:10px;
+
+   background-size:100% 100%;
+   background-repeat: no-repeat;
+}
+.weather-pane h1,h2,h3,h4,h5,h6,p{
+    color:black;
+ 
+}
+.weather-title{
+    font-weight: bolder;
+    text-align: center;
+       font-family: 'Helvetica Neue LT Std';
+      font-size:28px;
+      color:#3c3b81;
+}
+.weather-card1{
+ 
+    background-color:#0FA3FF;
+      box-shadow: 1px 1px 10px 2px #888888;
+
+   
+}
+
+/* -----------------------------------------------------------------------------------------*/
+
+.card-header{
+    width:100%;
+    padding:12px;
+    background-color:red;
+}
+
+/*----------------------------------ABOUT---------------------------------------------------*/
+
+.about-div{
+    padding:24px;
+}
+.about-list-style{
+  width:80%;
+  margin-bottom:42px;
+}
+#about-border{
+  color:red;
+  height:1px;
+  background-color:red;
+}
+#about-marilao{
+  color:yellow;
+  font-weight: bolder;
+  font-size: 62px;
+   font-family: 'Helvetica Neue LT Std';
+  -webkit-text-stroke: 3px red;
+}
+
+.about-header h3{
+  font-family: 'Helvetica Neue LT Std';
+   text-shadow:
+    3px 3px 0 yellow,
+   -1px -1px 0 yellow,  
+    1px -1px 0 yellow,
+   -1px  1px 0 yellow,
+    1px  1px 0 yellow;
+}
+
+.active{
+ 
+  padding-bottom: 12px;
+  color:white;
+}
+
+.e-hotline-label{
+  position: relative;
+  left:20px;
+  color:red;
+
+    font-family: 'Helvetica Neue LT Std';
+}
+
+.about-bar-header{
+  padding-top: 12px;
+  margin-top: 42px;
+  color:black;
+  border-bottom:5px solid red;
+}
+.about-bar-header2{
+  padding-top: 12px;
+  margin-top: 42px;
+  color:black;
+
+}
+
+.hotline-header-content{
+    border-bottom: 5px solid red;
+    padding-left:12px;
+   
+}
+
+.hotline-header-content h3{
+ font-weight: bolder;
+     font-family: 'Helvetica Neue LT Std';
+     color:#3c3b83;
+}
+.about-bar-header h3{
+  position: relative;
+  left:24px;
+}
+/*---------------------------------TOURISM--------------------------------------------------*/
+
+
+/*---------- churches.html ----------*/
+.church-bg{
+    background: url('../img/whity.jpg');
+  background-size: cover;
+}
+
+.churches-box{
+  background: url('../img/mar.jpg');
+  background-size: cover;
+
+    color:black;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+
+.church-header1{
+
+    font-size:20px ;
+    font-family: 'Raleway', sans-serif;
+    color:black;
+    font-weight: bolder;
+
+}
+
+
+.church-header2{
+
+    font-size:12px ;
+    font-family: 'Raleway', sans-serif;
+    color:black;
+     opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+
+}
+
+
+/*---------- churches.html ----------*/
+
+
+
+
+/*---------- resort.html ----------*/
+
+.touristdestionation-container {
+  padding:24px;
+}
+
+.resort-bg{
+    background: url('../img/whity.jpg');
+  background-size: cover;
+}
+
+
+.resort-header1{
+
+    font-size:20px ;
+    font-family: 'Raleway', sans-serif;
+    color:black;
+    font-weight: bolder;
+
+}
+
+
+.resort-header2{
+
+    font-size:12px ;
+    font-family: 'Raleway', sans-serif;
+    color:black;
+     opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+
+}
+
+
+/*---------- resort.html ----------*/
+
+
+
+/*---------- restaurant.html ----------*/
+
+.restaurant-bg{
+    background: url('../img/whity.jpg');
+  background-size: cover;
+}
+
+
+.restaurant-header1{
+
+    font-size:20px ;
+    font-family: 'Raleway', sans-serif;
+    color:black;
+    font-weight: bolder;
+
+}
+
+
+.restaurant-header2{
+
+    font-size:12px ;
+    font-family: 'Raleway', sans-serif;
+    color:black;
+     opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+
+}
+
+
+
+
+/*---------- restaurant.html ----------*/
+
+
+
+
+
+.sb-container{
+    width:100%;
+}
+
+.p-name{
+    float:left;
+}
+.cname{
+    padding:24px;
+    font-size:24px;
+}
+
+.profile-card{
+    padding:24px;
+}
+#imgsb{
+    border-radius:50%;
+}
+
+
+
+#border-input{
+    border:2px solid black;
+}
+
+
+
+
+.ion-list-padding{
+  padding-top: 12px;
+}
+
+
+.flood-header-name{
+  color:white;
+}
+
+.header-weather{
+    background-color:#446CB3;
+    color:white;
+}
+.weather-container{
+    background-color: #E4F1FE;
+}
+
+#share-button{
+    background-color:#3498DB;
+    color:white;
+    border:2px solid #3498DB;
+}
+
+.tour-header{
+    background-color:#59ABE3;
+    
+    width:100%;
+}
+
+.content-page{
+    padding:12px;
+}
+
+
+/*--- Main Screen BG  --- */
+#mars{
+
+    color:yellow;
+}
+
+
+
+.div-main{
+    padding:8%;
+  background: url('../img/backgrounds.jpg');
+   background-repeat:no-repeat;
+background-size: cover;
+background-position:center;
+width: 100%;
+
+object-fit:contain;
+
+
+height: auto;
+
+}
+
+
+
+
+#mainfoot{
+  background-color: #1C2B4A;
+  border-top-color: #1C2B4A;
+  box-shadow: 0px 0px 1px 2px black;
+   border-bottom-color: #1C2B4A;
+}
+
+#maincols{
+width:250px;
+}
+
+
+.main-con{
+
+  padding-top: 10px;
+}
+
+/*--- Main Screen BG  --- */
+
+/*--- Main Top Header BG Color  --- */
+
+
+
+
+.ion-slide{
+
+  position: relative;
+
+}
+
+
+
+
+/*--- Main Top Header BG Color  --- */
+
+
+/*--- Main Screen BG  --- */
+
+
+/* --- Side Nav List BG Color ---*/
+
+.item-menu,.stable-bg,.list-bg{
+   background-color:white;
+}
+
+.stable-bg:hover{
+  background-color:white;
+}
+
+/* --- Side Nav List BG Color ---*/
+
+
+/* ------4 Buttons Main Color--------*/
+
+.mid-color1{
+    background-color:#00a2ff;
+  
+   opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+
+
+}
+.mid-color2{
+   background-color:#00a2ff;
+   opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+
+}
+
+
+
+#sidecone{
+    color: #F7CA18;
+    padding-top: 13px;
+    margin-left: 80px;
+}
+
+
+
+#maintxt{
+    color:white;
+    font-weight: bold;
+    font-size: 15px;
+
+}
+
+/* ------4 Buttons Main Color 
+     background-color: transparent;
+   
+   
+    border-color: #0000ff;--------*/
+
+
+
+/* --- Side Nav Title Color ---*/
+
+.nav-title{
+    color:white;
+    background-color:#2e2e2e;
+}
+
+
+
+
+.nav-header{
+   background-color:#2e2e2e;
+    color:white;
+}
+
+#sidecons{
+
+color: #3c3b83;
+}
+
+#sidetxt{
+    color: #3c3b81;
+    white-space: normal;
+    font-size: 16px;
+   
+}
+
+
+/*---About Marilao ---*/ 
+
+
+
+#abody{
+
+ background: url('../img/mari.jpg');
+  background-size: cover;
+
+}
+
+
+#aboutmars{
+ 
+font-weight: bold;
+font-size: 15px;
+
+}
+
+#aboutmage{
+width: 100%;
+height: 300px;
+
+
+
+}
+
+.about-card-main{
+  padding:12px;
+  margin-top: 64px;
+
+}
+
+
+.about-card-contact{
+  padding:12px;
+  margin-top: 140px;
+
+}
+
+/*---About Marilao ---*/ 
+
+
+
+/* ---Feedback ---*/
+
+
+
+
+#asser{
+
+    background-color: #1C2B4A;
+
+}
+
+
+#headbkg{
+
+   background-color: #1C2B4A;
+
+ border-bottom-color: white;
+}
+
+.feedbackbg{
+
+   background: url('../img/whity.jpg');
+  background-size: cover;
+   
+}
+
+
+.feedback-header{
+    padding-top:30px;
+
+}
+
+.feedback-header h3, .feedback-header p{
+     color:black;
+}
+
+#fed {
+    background: url('../img/mar.jpg');
+  background-size: cover;
+  height:200px;
+}
+
+#hage {
+   
+  background-color: #1C2B4A;
+}
+
+#dork1{
+font-weight: bold;
+color: #F4D03F;
+font-size: 18px;
+padding-top: 10px;
+}
+
+
+#dork2{
+ font-weight: bold;
+font-size: 11px;
+color: #F4D03F;
+padding-left: 18px;
+padding-bottom: 8px;
+}
+
+#dorkcon{
+
+font-size: 25px;
+color: #F4D03F;
+
+}
+
+
+
+/* ---Feedback ---*/
+
+/* ---  Contact or Hotline ---*/
+
+#contxt1{
+font-size:20px;
+color: white;
+white-space: normal;
+font-family: 'Helvetica Neue LT Std';
+
+}
+
+
+.contact-bg{
+
+background: url('../img/whity.jpg');
+  background-size: cover;
+}
+.hotline-button{
+  background-color: red;
+  display: inline-block;
+  position: relative;
+  right:0px;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:8px;
+  padding-bottom:8px;
+  font-size: 12px;
+  width:54px;
+  
+}
+#hotline-num{
+  color:red;
+  text-decoration: none;
+}
+.tel-icons{
+  color:white;
+  font-size: 24px;
+}
+.tel-icons-hotline{
+  color:red;
+    font-family: 'Helvetica Neue LT Std';
+}
+#dial-span{
+  font-weight: bolder;
+  color:white;
+}
+
+#douche2{
+
+
+  background-color: #3B3B3B;
+  color: white;
+
+white-space: none;
+ border-bottom-color: white;
+
+
+}
+
+#confor{
+font-weight: bold;
+color: white;
+font-size: 17px;
+
+padding-top: 9px;
+padding-bottom: 5px;
+
+}
+
+#contitle{
+
+background: url('../img/whity.jpg');
+  
+  background-size: cover;
+  border-radius: 3px;
+
+}
+#contlist{
+ background-color: #89C4F4;
+ border-radius: 15px;
+  background-size: cover;
+
+}
+
+
+
+.contact-list{
+
+border-color: black;
+
+}
+
+#contlet{
+
+color: black;
+
+}
+
+
+.conter1{
+
+    font-size: 17px;
+    font-weight: bold;
+    padding-top: 3px;
+    padding-bottom:5px;
+}
+
+/* ---  Contact or Hotline ---*/
+
+
+
+
+
+
+/* ---- Jobs ----*/
+
+.jobs-container{
+  margin-top: 64px;
+}
+.jobs-font{
+ color:black;
+    font-size: 12px;
+     font-family: 'Helvetica Neue LT Std'
+}
+.joblist-header{
+    color:white;
+    white-space: normal;
+}
+#jobstitle{
+    color:white;
+    font-size: 12px;
+     font-family: 'Helvetica Neue LT Std';
+}
+
+#jobsback{
+
+  border-radius: 8px;
+  padding-bottom: 20px;
+  padding-left:20px;
+  padding-right: 20px;
+
+ position: relative;
+ top:-30px;
+}
+
+
+#job-hed{
+  background-color: #404040;
+  color:white;
+  border-radius: 8px;
+  padding-bottom: 20px;
+  border-bottom-color: white;
+  margin-top: 54px;
+  margin-left:14px;
+  width:98%;
+}
+#putin{
+  margin-top: 10px;
+  background-color: white;
+}
+
+
+.job-border{
+    border-bottom: 1px solid #A8A8A8;
+}
+
+#job-text{
+    text-decoration: none;
+    color:white;
+    border-bottom:2px solid red;
+}
+.jobs-details-container{
+  border-bottom: 2px solid red;
+  margin-bottom: 8px;
+}
+
+
+.jobsnel{
+
+}
+
+.job-content{
+    color:black;
+}
+
+#jobtext{
+    font-weight: bolder;
+    font-size: 13px;
+     font-family: 'Helvetica Neue LT Std';
+      color: #1C2B4A;
+}
+
+
+
+
+.joblist-header{
+    
+    color:white;
+}
+
+
+
+
+.jobs-panel{
+    
+    color:black;
+}
+#jobstitle{
+  color:#3c3b83;
+  font-size: 24px;
+  white-space: normal;
+   font-family: 'Helvetica Neue LT Std';
+}
+
+#jobs-desc{
+  font-size:18px;
+  position: relative; 
+  left:0px;
+  white-space: normal;
+     font-family: 'Helvetica Neue LT Std';
+}
+
+
+/* ---- Jobs ----*/
+
+
+
+/* ---Events ---*/
+
+.eventsconbg{
+      background: url('../img/whity.jpg');
+  background-size: cover;
+  
+}
+
+.event-card, .event-card h2, .event-card p{
+    color:white;
+}
+
+.joblist-header{
+background-color: black;
+}
+
+.event-background .card{
+background-color: #FFB61E;
+}
+
+
+.event-background{
+          background: url('../img/whity.jpg');
+  background-size: cover;
+
+}
+
+#heads{
+
+    background-color: #1C2B4A;
+    font-size: 12px;
+}
+#headi{
+
+  font-weight: bold;
+    font-size: 13px;
+}
+
+.event-content{
+    color:black;
+}
+
+
+.event-header{
+    padding:8px;
+      background-color:green;
+}
+.event-desc{
+    padding:8px;
+    background-color: green;
+}
+
+.events-pane{
+         background: url('../img/whity.jpg');
+  background-size: cover;
+}
+.content-background{
+    background: url('../img/whity.jpg');
+  background-size: cover;
+}
+
+#outer-color{
+    background: url('../img/mar.jpg');
+  background-size: cover;
+
+}
+#eventxt{
+
+
+    font-size:14px;
+color: black;
+
+font-weight: bold;
+}
+
+#eventxt3{
+ 
+    color:#003171;
+    font-size: 14px;
+    font-weight: bold;
+
+
+}
+.ventle{
+
+    color:black;
+    font-size: 12px;
+     font-family: 'Helvetica Neue LT Std';
+
+}
+
+
+#eventdes{
+color: black;
+
+}
+#eventit{
+  font-size: 14px;
+  font-weight: bold;
+  color: #F4D03F;
+  white-space: normal;
+}
+
+#eventdat{
+  font-size: 12px;
+   font-weight: bold;
+  color: #F4D03F;
+    white-space: normal;
+}
+
+#textcon{
+background-color: #1C2B4A;
+
+}
+
+
+
+#headvent{
+     background: url('../img/mar.jpg');
+  background-size: cover;
+
+}
+
+#magecon{
+  border-radius: 8px;
+    background: url('../img/whity.jpg');
+  background-size: cover;
+  object-fit:contain;
+}
+/* --- GLOBAL ---*/
+#links{
+    font-size: 14px;
+   color: #1C2B4A;
+  font-weight: bolder;
+}
+
+/* --- GLOBAL  ---*/
+
+
+
+#ventcon{
+   background: url('../img/mar.jpg');
+  background-size: cover;
+
+
+}
+
+#ventmage{
+   background: url('../img/mar.jpg');
+  background-size: cover;
+
+
+}
+
+
+
+/* ---Events ---*/
+
+
+/*---- News or Home----*/
+
+
+.news-background{
+    background: url('../img/whity.jpg');
+  background-size: cover;
+}
+
+.news-header1{
+
+    font-size:15px ;
+    font-family: 'Helvetica Neue LT Std';
+    color:black;
+    font-weight: bolder;
+
+}
+
+
+.news-header2{
+
+    font-size:12px ;
+     font-family: 'Helvetica Neue LT Std';
+    color:black;
+     opacity: 0.9;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+
+}
+
+#newsmodal{
+ background: url('../img/whity.jpg');
+  background-size: cover;
+
+}
+
+.news-box{
+  background: url('../img/mar.jpg');
+  background-size: cover;
+
+    color:white;
+      font-family: 'Helvetica Neue LT Std';
+}
+
+.news-image{
+  object-fit:contain;
+}
+
+
+
+
+
+
+
+#newshead{
+   
+   background-color: #1C2B4A;
+  
+}
+
+#news-border{
+   color:red;
+  height:4px;
+  background-color:red;
+  margin-bottom: 15px;
+   margin-top: 3px;
+}
+
+#news-border2{
+   color:red;
+  height:4px;
+  background-color:red;
+
+}
+
+#event-border{
+
+   color:red;
+  height:4px;
+  background-color:red;
+
+
+}
+
+.credit-background{
+    background: url('../img/background.jpg');
+  background-size: cover;
+  padding:8px;
+   font-family: 'Helvetica Neue LT Std';
+}
+.credit-background h1,.credit-background h2,.credit-background h3, .credit-background h4, .credit-background h5,.credit-background h6, .credit-background p,.credit-background a {
+font-family: 'Lora', serif;
+ white-space: none;
+}
+.name-container{
+  margin:4px;
+   font-family: 'Helvetica Neue LT Std';
+}
+.name-container h4{
+    font-family: 'Helvetica Neue LT Std';
+
+}
+.proponent-content{
+  padding:12px;
+    font-family: 'Helvetica Neue LT Std';
+}
+.proponent-content h4{
+     font-family: 'Helvetica Neue LT Std';
+}
+.proponent-content h3{
+    font-family: 'Helvetica Neue LT Std';
+}
+.name-credit{
+white-space: none;
+}
+#newstle{
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#newsfot{
+
+    font-size: 12px;
+    font-weight: bold;
+
+
+}
+
+#newstxt{
+font-size:14px;
+color: black;
+  font-family: 'Helvetica Neue LT Std';
+font-weight: bold;
+}
+#newsmage{
+
+  border-radius: 8px;
+}
+
+
+
+.item-thumbnail-left{
+    border:1px solid black;
+}
+
+
+#newstxt3{
+    font-family: 'Helvetica Neue LT Std';
+    color:#003171;
+    font-size: 12px;
+    font-weight: bolder;
+
+
+}
+
+.newsarchive{
+    margin:12px;
+}
+
+
+#conty{
+   background: url('../img/whity.jpg');
+  background-size: cover;
+
+
+}
+
+.news-cont{
+      background: url('../img/whity.jpg');
+  background-size: cover;
+    color:black;
+      border-radius: 8px
+}
+.newstitle{
+    white-space: normal;
+}
+
+.contact-box{
+    white-space: normal;
+    width:70%;
+}
+.contact-button{
+  width:20%;
+}
+
+#archhead{
+color: black;
+font-size: 15px;
+font-weight: bold;
+}
+
+#archdate{
+font-size: 12px;
+font-weight: bold;
+
+color: black;
+}
+
+#nheadmodal{
+
+    color: #F7CA18;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.news-div{
+    border-top:2px solid black;
+    border-bottom:2px solid black;
+}
+
+.news-btn{
+    background-color:#1BBC9B;
+      border-radius:5%;
+}
+/*---- News or Home----*/
+
+
+
+/* --- Chat ---*/
+
+
+
+
+#ventall{
+background: url('../img/whity.jpg');
+  background-size: cover;
+}
+#goat{
+background: url('../img/whity.jpg');
+  background-size: cover;
+
+}
+#chatxt1{
+
+  color: #F7CA18;
+  font-size: 25px;
+}
+
+#chatxt2{
+
+ color: #F7CA18;
+  font-size: 12px;
+}
+
+
+#chatle{
+
+background-color: #1C2B4A;
+  padding-top: 20px;
+  
+}
+#goal{
+
+  background: url('../img/whity.jpg');
+  background-size: cover;
+
+}
+
+
+.newsletter-border{
+  border-bottom:5px solid red;
+}
+.login-padding{
+  padding:18px;
+}
+
+#cfed {
+  background-color:#2f2f2f;
+  background-size: cover;
+}
+
+.login-button-color{
+  background-color:#e13236;
+  color: white;
+  font-weight: bolder;
+}
+
+#cheadbkg{
+
+   background-color: #1C2B4A;
+   padding-top: 10px;
+padding-bottom: 10px;
+ border-bottom-color: white;
+}
+
+
+#chtxt1{
+font-size: 20px;
+color: #F4D03F;
+
+}
+
+
+#chtxt2{
+ font-weight: bold;
+
+font-size: 11px;
+ color: #F4D03F;
+}
+
+#concon{
+
+  font-size: 22px;
+color: #F4D03F;
+}
+/* --- Chat ---*/
+
+
+
+/* --- Archive News---*/
+
+
+#archtle{
+color: black;
+
+}
+
+
+#archdat{
+
+color: black;
+  
+}
+
+#traffic-bg{
+  background: url('../img/whity.jpg');
+  background-size: cover;
+
+}
+/* --- Archive News---*/
+
+
+
+#tol{
+
+    font-size: 40px;
+    color: white;
+
+}
+
+
+#devcon{
+
+  margin-left: auto;
+    margin-right: auto;
+    width: 6em
+}
+
+
+@media screen and (min-device-width: 480px) {
+    .background.scroll-content {
+      background: url('../img/backgrounds.jpg') no-repeat;
+      background-size: cover;
+    }
+}
+
+@media screen and (min-device-width: 720px) {
+    .background.scroll-content {
+      background: url('../img/backgrounds.jpg') no-repeat;
+      background-size: cover;
+    }
+}
+
+
+/*--- Main Screen BG Color --- */
+.main{
+    background-color:blue;
+    width:100%;
+    content:'';
+    position:relative;
+  
+}
+
+.col{
+   
+   margin:2px;
+}
+
+.top-button{
+    max-width:50%;
+    height:150px;
+}
+
+
+
+.top-color1{
+   background-color: #2574A9;
+
+
+}
+
+
+.bottom-color1{
+  background-color: #2574A9;
+}
+.bottom-color2{
+ background-color: #2574A9;
+}
+
+.main-content{
+    padding:32px;
+
+}
+.main-content h5{
+    color:white;
+}
+.step{
+    font-size:70px;
+  color:white;
+}
+#anchor-div{
+    color:white;
+    text-decoration: none;
+}
+
+.description {
+    color: #8F8F8F;
+    white-space: normal;
+}
+
+.status-label{
+  position: relative;
+  top:-5px;
+  left:5px;
+  font-family: 'Helvetica Neue LT Std';
+}
+
+.traffic-label{
+  display: inline-block;
+    font-size:14px;
+}
+.traffic-label-2{
+  font-size:17px;
+  font-weight: bolder;
+  font-family: 'Helvetica Neue LT Std';
+}
+.traffic-details{
+  white-space: normal;
+font-family: 'Helvetica Neue LT Std';
+}
+.dotted-lines{
+    border-bottom: 5px dotted black;
+    width:370px;
+    height:20px;
+    position: relative;
+    left:-40px;
+}
+
+.tour-pane{
+    white-space: normal;
+    color:white;
+   background-color:#446CB3;
+}
+.tour-pane:active{
+    background-color: #446CB3;
+}
+.tour-pane a .tourism-header{
+    white-space:normal;
+}
+
+
+.traffic-type{
+
+    padding-top: 10px;
+    font-size:24px;
+}
+.traffic-tablinks{
+  padding-top: -3px;
+  white-space: nowrap;
+  width:140px;
+}
+.traffic-loc{
+    font-weight: bold;
+    font-size:16px;
+}
+
+
+
+
+.latest-pane{
+ background-color:#CF000F;
+}
+.announcement-pane{
+ background-color:#F39C12;
+}
+.lu-pane{
+ background-color:#96281B;
+}
+
+
+.footer {
+    margin-top: 15px;
+
+}
+
+.item-thumbnail-left{
+    border:1px solid black;
+}
+
+.about-list{
+    border-bottom:2px solid black;
+}
+
+.job-header{
+    background-color:#F2784B;
+    color:white;
+
+}
+
+#job-head{
+  border-bottom: 2px solid red;
+  border: 2px solid black;
+}
+.j-container{
+    background-color:#FDE3A7;
+}
+
+.full-job-container{
+    background-color:#F4B350;
+}
+.traffic-legend{
+
+}
+.light {
+    background-color: green;
+      color:white;
+
+}
+.moderate {
+    background-color: #F7CA18;
+      color:white;
+}
+.heavy{
+    background-color: #CF000F;
+      color:white;
+}
+.legend-div{
+    position:fixed;
+    background-color: #383838;
+    color:white;
+    bottom:0px;
+}
+
+.chat-div{
+   position:fixed;
+
+    color:white;
+    bottom:0px;
+}
+
+.border-news{
+    border-bottom: 1px solid #A8A8A8;
+}
+.tourism-link{
+     border-bottom: 1px solid #A8A8A8;
+     background-color:#36D7B7;
+
+}
+.tourism-link:active{
+   border-bottom: 1px solid #A8A8A8;
+     background-color:#36D7B7; 
+}
+.tourism-link h2{
+ color:white;
+}
+
+.full-job-list{
+
+    
+}
+
+.weather-icon{
+    float:right;
+    width:50px;
+    height:80px;
+}
+.weather-info{
+
+    float:left;
+    width:70%;
+}
+
+
+.weather-header{
+  width:75%;
+ 
+  padding:12px;
+  height:auto;
+
+
+}
+
+.weather-date{
+  padding:12px;
+}
+.weather-header h1{
+  color:black;
+  font-size: 24px;
+
+}
+.powered-image{
+  display:inline-block;
+}
+
+.logo-container{
+    padding:12px;
+}
+
+a .title-news{
+    font-weight: bolder;
+    white-space: normal;
+}
+a .tourism-header{
+    white-space: normal;
+}
+
+.tourism-name{
+
+  
+    color: white;
+}
+
+
+.view-all{
+    color:black;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+
+/* ----   Weather Menu Background ---*/
+
+
+.weatherbackground{
+    background-color: #3A539B;
+}
+
+/* ----   Weather Menu Background ---*/
+
+
+
+
+
+
+
+/* ----   Business ---*/
+
+#titcon{
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+
+}
+#bisline{
+width: 1380px;
+
+color: #000000;
+
+}
+#bistxt1{
+
+ 
+color: #F4D03F;
+font-size: 20px;
+padding-top: 10px;
+padding-bottom: 3px;
+
+}
+
+
+#bistxt2{
+
+color: #F4D03F;
+font-size: 11px;
+padding-top: 3px;
+padding-bottom: 10px;
+font-weight: bold;
+margin-left: 5px;
+
+}
+
+
+
+.business-link{
+    font-weight: bolder;
+    font-size: 18px;
+    border:2px solid blue;
+
+     background-color: #52B3D9;
+}
+.business-link:active{
+    font-weight: bolder;
+    font-size: 24px;
+     background-color: #52B3D9;
+}
+.business-list{
+    margin:5px;
+}
+
+.business-list a {
+    white-space: normal;
+
+}
+
+.business-title{
+    color:black;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.business-bg{
+       background: url('../img/whity.jpg');
+  background-size: cover;
+}
+.business-background a{
+    text-decoration: none;
+}
+#linkbis{
+
+ font-size: 14px;
+  font-weight: bold;
+
+
+  color: #2980b9;
+}
+
+#liners{
+
+  width: 70%;
+}
+
+/* ----   Business ---*/
+
+
+
+
+
+
+
+
+.bus-dir{
+    border-bottom: 2px solid white;
+}
+#bus-dir-title a{
+    text-decoration: none; 
+
+}
+.bus-dir-title a{
+    text-decoration: none;
+}
+
+
+.main-box{
+      box-shadow: 1px 1px 1px #888888;
+}
+.nav-header-color{
+    background-color: #2C3E50;
+}
+
+
+
+.tourism-main-content{
+    /*margin:12px;*/
+}
+
+
+.archive-letter{
+    color:black;
+    font-size:18px;
+}
+
+.archive-item{
+    
+    text-decoration: none;
+    color:white;
+}
+
+
+
+
+
+.brgy-label{
+    color:white;
+}
+
+
+
+
+.fb-profile{
+  background-color:white;
+  margin: 12px;
+  border-bottom:12px solid red;
+  padding: 12px;
+ position: relative;
+ top:24px;
+ z-index: 10;
+
+}
+
+.fb-profile h2, .fb-profile p,.fb-profile h4 {
+    color:black;
+    font-weight: bolder;
+     font-family: 'Helvetica Neue LT Std';
+     color:#3c3b83;
+}
+
+
+
+.logout-button{
+    background-color: red;
+    color:white;
+    font-weight: bolder;
+    border:2px solid red;
+}
+.tourist-list{
+    background-color:#1E8BC3;
+    height:170px;
+    padding:18px;
+}
+
+.tourist-list h2, .tourist-list p{
+    padding-top: 12px;
+    color:white;
+    white-space: normal;
+  font-family: 'Helvetica Neue LT Std';
+}
+.cover h2, .cover p,.cover h4{
+    color:black;
+     font-family: 'Helvetica Neue LT Std';
+}
+.t-header{
+    background-color:#6C7A89;
+    padding:8px;
+}
+
+.t-header h2{
+  color:white;
+}
+.t-header h4, .t-header p{
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    white-space: normal;
+}
+.flood-image{
+  padding:12px;
+}
+.route-container{
+    padding:12px;
+}
+
+.conversation{
+   font-family: 'Helvetica Neue LT Std';
+   font-weight: bolder;
+   font-size: 22px;
+
+}
+
+.chat-bubble h2{
+
+  font-family: 'Helvetica Neue LT Std';
+  color:#3c3b83;
+  font-size: 28px;
+
+}
+.conversation-content{
+
+  position: relative;
+  padding-top: 5px;
+  top:15px;
+
+   height:60%;
+
+}
+.chat-box{
+  position: relative;
+  height:120px;
+
+
+}
+
+.message-wrapper {
+  padding-bottom: 12px;
+}
+ .chat-bubble p{
+   font-family: 'Helvetica Neue LT Std';
+   color:black;
+   font-size: 18px;
+   white-space: normal;
+ }
+.send-button-chat{
+  background-color: red;
+   font-family: 'Helvetica Neue LT Std';
+   font-weight: bolder;
+   color:white;
+   font-size:22px;
+
+}
+.send-message{
+  width:100%;
+}
+.message-wrapper{
+  min-height:auto;
+}
+.item .contact-name {
+    font-family: 'Helvetica Neue LT Std';
+    white-space:normal;
+    width:75%;
+    font-size:20px;
+    display: inline-block;
+    padding-top: 5px;
+
+
+}
+
+.item .contact-name h4{
+      white-space:none;
+      font-size: 24px;
+}
+.weather-location{
+    color:white;
+    white-space: normal;
+}
+
+.last-update{
+  white-space: normal;
+}
+.weather-loc{
+   font-family: 'Helvetica Neue LT Std';
+   color:black;
+   font-size: 28px;
+}
+#meter-image{
+    float:left;
+}
+.flood-content{
+    height:auto;
+    padding:12px;
+}
+.flood-content-desc{
+    border:2px solid black;
+    padding-top:14px;
+}
+#datePosted {
+    color:white;
+}
+.item-floating-label{
+    background-color: white;
+}
+.profile-inf{
+   padding:24px;
+}
+
+.inside-content{
+    padding:12px;
+}
+  #map {
+        height: 100%;
+        width:100%;
+      }
+
+
+
+
+.t-header a{
+    text-decoration: none;
+    color:white;
+}
+.traffic-pane{
+  border:2px solid black;
+  overflow: scroll;
+  width:90%;
+  height:85%;
+
+}
+.e-hotline{
+  color:red;
+  font-size: 42px;
+    font-family: 'Helvetica Neue LT Std';
+}
+.latest-news{
+  width:100%;
+}
+.title-spacing{
+  margin:12px;
+}
+
+
+.chat-bubble {
+  border-radius: 5px;
+  display: block;
+  padding: 10px 18px;
+  position: relative;
+  margin: 10px;
+  max-width: 80%;
+}
+
+.chat-bubble:before {
+  content: "\00a0";
+  display: block;
+  height: 16px;
+  width: 9px;
+  position: absolute;
+  bottom: -7.5px;
+}
+
+.chat-bubble.left {
+  background-color: #e6e5eb;
+  float: left;
+  margin-left: 55px;
+}
+
+.chat-bubble.left:before {
+  background-color: #e6e5eb;
+  left: 10px;
+  -webkit-transform: rotate(70deg) skew(5deg);
+}
+
+.chat-bubble.right {
+  background-color: #808080;
+  color: #fff;
+  float: right;
+  margin-right: 55px;
+}
+
+.chat-bubble.right:before {
+  background-color: #808080;
+  right: 10px;
+  -webkit-transform: rotate(118deg) skew(-5deg);
+}
+.pio-msg h2,.pio-msg p{
+    color:white;
+}
+
+.interview-place{
+  white-space: none;
+}
+
+.event-font{
+  color:black;
+  white-space:none;
+   font-family: 'Helvetica Neue LT Std';
+}
+
+
+.register-form{
+  background-color:red;
+}
+.forgot-pass{
+  color:white;
+  text-decoration: none;
+}
+.blank-container {
+  width:100%;
+  height:175px;
+}
+
+.fiesta-container {
+  padding:24px;
+}
+
+
+
+.tour-content-background{
+  padding:12px;
+}
+.description-content{
+  padding:12px;
+}
+
+.credit-content{
+  padding:24px;
+}
+
+.credit-font{
+  font-size:18px;
+}
+.item-note{
+  font-size:14px;
+  color:black;
+}
+.cred-role{
+  color:white;
+
+}
+
+img.displayed {
+ display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+/* FLOOD */
+  .flood-image{
+      object-fit:contain;
+  }
+
+/* ---- */
+
+/* church_content */
+  .church-image{
+      object-fit:contain;
+  }
+
+/* ---- */
+
+/* resort_content */
+  .resort-image{
+      object-fit:contain;
+  }
+
+/* ---- */
+/* restaurant_content */
+  .restaurant-image{
+      object-fit:contain;
+  }
+
+/* ---- */
+
+
+
+/* ----   Slide Box ----*/
+#slideb1{
+
+max-height: 100%;
+background-color: skyblue;
+}
+
+
+#slideb2{
+
+max-height: 100%;
+background-color: yellow;  
+}
+
+
+
+#slideb3{
+
+max-height: 100%;
+background-color: pink;  
+}
+
+
+.slider{
+
+  height: 100%;
+
+}
+
+#slidecon{
+
+height: 100%;
+width: 100%;
+}
+
+#slidesamp1{
+
+
+  background-color: skyblue;
+}
+
+#slidesamp2{
+
+
+  background-color: yellow;
+}
+
+
+/* ----   Slide Box ----*/
+
+.homepage-content{
+  position: relative;
+  
+}
+
+.first{
+  color:red;
+  font-size:48px;
+  font-family: 'Helvetica Neue LT Std';
+font-weight:bolder;
+}
+.second{
+  color:red;
+  font-size:44px;
+  font-family: 'Helvetica Neue LT Std';
+  font-weight:bolder;
+
+}
+.third{
+  color:blue;
+  font-size:48px;
+  font-family: 'Helvetica Neue LT Std';
+ font-weight:bolder;
+}
+.fourth{
+  font-size:44px;
+  color:blue;
+   font-family: 'Helvetica Neue LT Std';
+  font-weight:bolder;
+}
+
+
+.weather-header-first{
+  display: block;
+  border-bottom: 5px solid red;
+  margin-bottom: 20px;
+  width:90%;
+}
+
+#tablinks{
+   font-family: 'Helvetica Neue LT Std';
+  font-size: 19px;
+  min-height: 0px;
+  min-width:90px;
+  line-height: 1.25;
+color:#3c3b83;
+font-weight: bolder;
+
+padding-left:5px;
+padding-right:5px;
+position: relative;
+margin-left:0px;
+top:-3px;
+
+
+}
+
+#tablinks .tf{
+
+
+  white-space: nowrap;
+  width: 100%;
+}
+
+
+#tablinks-custom{
+    font-family: 'Helvetica Neue LT Std';
+  font-size:20px;
+  min-height: 45px;
+  line-height: 1.25;
+color:#3c3b83;
+font-weight: bolder;
+  
+min-width:170px;
+position: relative;
+margin-left:0px;
+top:-3px;
+
+
+}
+#tablinks-custom2{
+    font-family: 'Helvetica Neue LT Std';
+  font-size:20px;
+  min-height: 45px;
+  line-height: 1.25;
+color:#3c3b83;
+font-weight: bolder;
+  
+min-width:120px;
+position: relative;
+margin-left:0px;
+top:-3px;
+
+
+}
+
+#tablinks-custom2.active-tab{
+  background-color:red;
+  color:white;
+  min-height: 45px;
+ 
+padding-top: 8px;
+
+
+}
+#tablinks-custom.active-tab{
+  background-color:red;
+  color:white;
+  min-height: 45px;
+min-width:170px;
+padding-top: 8px;
+
+
+}
+
+#tablinks.active-tab{
+  background-color:red;
+  color:white;
+  min-height: 45px;
+ width:auto;
+  white-space: nowrap;
+
+padding-top: 8px;
+}
+
+
+
+#slidescon{
+
+  background-color: #bdc3c7;
+  height:100%;
+}
+
+.nav-side-button{
+  background:url('../img/ts.png');
+  background-size:95% auto;
+  background-repeat: no-repeat;
+  width:100px;
+  height:100px;
+  display: block;
+
+}
+
+.slide-background{
+  background-color:white;
+ height:100%;
+ position: relative;
+ top:5px;
+
+}
+
+.header-img{
+
+  height:100px;
+  width:100%;
+
+}
+
+.title-nav{
+
+  height:100px;
+}
+
+.title-name{
+
+  font-size:20px;
+  font-weight: bolder;
+}
+
+.title-name-program{
+  font-size:24px;
+  font-weight: bolder;
+}
+.nav-div{
+  padding:5px;
+}
+
+.loading-spinner{
+  position: relative;
+  top:150px;
+}
+
+.app-header{
+  background-color:#2e2e2e;
+}
+.newsfeed{
+  height:auto;
+  width:100%;
+
+}
+
+#jobs-desc-color{
+  background-color: #3c3b83;
+  color:white;
+   font-size:18px;
+  position: relative; 
+  left:0px;
+  white-space: none;
+}
+
+.featured-news{
+  position: absolute;
+ bottom:0px;
+  z-index: 10;
+  min-height: 1.5em;
+  width: 100%;
+  height: auto;
+  background-color: black;
+  opacity: 0.9;
+}
+.latest-container h1{
+  font-family: 'Helvetica Neue LT Std';
+  text-align: center;
+  font-size: 24px;
+     color:#3c3b83;
+     padding-top: 3px;
+     margin-bottom:3px;
+     font-weight: bolder;
+}
+.latest-container{
+
+  border-bottom:3px solid red;
+  margin:5px;
+}
+.featured-title{
+  text-align: left;
+  position: relative;
+  left:4px;
+  font-size:18px;
+  top:0px;
+  font-family: 'Helvetica Neue LT Std';
+  color:white;
+}
+.featured-news-letter{
+    color:white;
+    text-align: left;
+    z-index: 20;
+     position: absolute;
+ bottom:0px;
+}
+.featured-news-title{
+text-align:left;
+ font-family: 'Helvetica Neue LT Std';
+ color:white;
+ position: relative;
+ left:4px;
+ bottom:3px;
+ line-height: 19px;
+
+}
+
+.slider-content{
+  position: relative;
+  top:-40px;
+  height:auto;
+}
+
+.slider-content-main{
+  position: relative;
+  top:-28px;
+}
+.slider-content-news{
+  position: relative;
+  top: 38px;
+}
+
+.program-slider-content{
+  position: relative;
+  top: -25px;
+}
+.slider-content-traffic{
+  position: relative;
+  top:-20px;
+
+}
+.slider-content-feedback{
+  position: relative;
+  top:20px;
+  height:auto;
+}
+.slider-content-event{
+  position: relative;
+  top:0px;
+}
+.job-slider-content{
+  position: relative;
+  top:-10px;
+  height:100%;
+}
+
+.news-label{
+  z-index: 10;
+  position: absolute;
+  top:5px;
+  right:5px;
+  padding:5px;
+  background-color: black;
+  font-size:18px;
+  color:white;
+  opacity: 0.8;
+  width:55px;
+  height:28px;
+}
+
+.news-label2{
+  z-index: 20;
+  position: absolute;
+  top:5px;
+  right:5px;
+  padding:5px;
+
+  font-size:18px;
+  color:white;
+ font-family: 'Helvetica Neue LT Std';
+
+}
+.newsfeed .news-image-title{
+  z-index: 9;
+  background-color:#000;
+  opacity: 0.8;
+  color:white;
+  width:100%;
+  bottom:27px;
+  position: absolute;
+ 
+  font-size:100%;
+  font-family: 'Helvetica Neue LT Std';
+  padding:5px;
+   min-height: 1.25em;
+  line-height: 1.25;
+  text-align: left;
+
+}
+
+.newsfeed .news-image-title2{
+  z-index: 20;
+
+  color:white;
+  width:97.5%;
+  bottom:20px;
+  position: absolute;
+ 
+  font-size:100%;
+  font-family: 'Helvetica Neue LT Std';
+  padding:5px;
+   min-height: 1.25em;
+  line-height: 1.25;
+  text-align: left;
+
+}
+
+
+
+.eventlist .event-image-title{
+    z-index: 10;
+  background-color:#000;
+  opacity: 0.8;
+  color:white;
+  width:100%;
+  bottom:0px;
+  position: absolute;
+   font-family: 'Helvetica Neue LT Std';
+  font-size:100%;
+  padding:2px;
+ font-size:100%;
+
+  min-height: 1em;
+  line-height: 1;
+  text-align: left;
+}
+.news-content-padding{
+  position: relative;
+  top:-39px;
+  padding-bottom:124px;
+}
+
+.traffic-label-header{
+  height:80px;
+}
+.traffic-content{
+    border-bottom: 5px dotted #a6a6a6;
+}
+
+.label-header-color{
+
+   font-weight: bolder;
+     font-family: 'Helvetica Neue LT Std';
+     color:#3c3b83;
+}
+.newsletter-label{
+  position: absolute;
+  z-index: 10;
+  background-color: black;
+  
+top: 220px;
+
+min-width: 46.2%;
+}
+.newsletter-label h4{
+  color: white;
+}
+
+.newsletter-height{
+  height:240px;
+
+
+}
+.nav-image-container{
+padding-top: 0px;
+}
+.loading-spinner{
+  position: relative;
+  top:150px;
+}
+
+.marilenews-icon{
+  position: relative;
+  left:22px;
+  top:8px;
+}
+
+#linej{
+
+width:100%;
+}
+
+.news-image-title .news-date{
+  position: absolute;
+  right:1.5px;
+  top:-28px;
+  font-family: 'Helvetica Neue LT Std';
+  font-weight: bolder;
+  color:white;
+  background-color:black;
+  opacity: 0.9;
+  width:auto;
+  height:25px;
+  padding:2px;
+}
+
+.news-image-title .news-date2{
+
+  position: absolute;
+  right:0px;
+  bottom:45px;
+  font-family: 'Helvetica Neue LT Std';
+  font-weight: bolder;
+  color:white;
+  font-size: 100%;
+  background-color:black;
+  opacity: 0.9;
+  min-width:23%;
+  height:25px;
+  display:inline-block;
+  padding:2px;
+
+}
+.event-label .event-date-label{
+  position: absolute;
+  right:0px;
+  top:-30px;
+  color:white;
+  background-color:black;
+  opacity: 0.8;
+  padding:8px;
+}
+
+#category{
+  color:white;
+  text-align: center;
+}
+
+.side-menu-section{
+  color:red;
+  font-weight: bolder;
+  font-size:18px;
+  width:100%;
+  padding-top: 16px;
+  font-family: 'Helvetica Neue LT Std';
+  margin-bottom: -12px;
+}
+.menu-line{
+  width:90%;
+  border-bottom:1px solid #dedede;
+  opacity: 0.9;
+ 
+}
+
+
+.platform-android .menu .scroll-content {
+  top: 0px;
+}
+.platform-android .menu-content {
+  box-shadow: none;
+}
+.platform-android.menu-open ion-pane.pane{
+  background-color: black;
+}
+.platform-android.menu-open ion-view.pane{
+  opacity:0.5;
+}
+
+.customize-modal{
+    
+    height:60%;
+    width: 60%;
+}
+
+.bar-modal{
+ 
+  width:100%;
+  position: relative;
+  height:50px;
+  border-bottom: 5px solid red;
+
+
+}
+.bar-modal .close-button{
+  color:red;
+}
+.bar-modal .bar-modal-header{
+  color:black;
+  font-size: 28px;
+  position: relative;
+  top:5px;
+  left:5px;
+  width: 98%;
+  padding-bottom: 12px;
+
+}
+
+.bar-modal .bar-modal-header .span-header{
+  position: relative;
+  top:12px;
+  left:24px;
+}
+.bar-modal .span-header{
+
+  
+  width:90%;
+}
+.bar-modal .bar-modal-header .bar-modal-close{
+  position: absolute;
+  right:0px;
+}
+.bar-modal .close-header{
+  position: relative;
+  right:0px;
+}
+
+.custom-content{
+  position: relative;
+  top:24px;
+}
+
+/* Main Content */
+.bar-modal2{
+ 
+  width:100%;
+  position: relative;
+  height:40px;
+  border-bottom: 5px solid red;
+
+
+
+}
+.bar-modal2 .close-button{
+  color:red;
+}
+.bar-modal2 .bar-modal-header{
+  color:black;
+  font-size: 28px;
+  position: relative;
+
+  left:5px;
+  width: 100%;
+
+
+}
+
+.bar-modal2 .bar-modal-header .span-header{
+  position: relative;
+  top:12px;
+  left:5px;
+}
+.bar-modal2 .span-header2{
+
+position: relative;
+z-index: 2;
+top:7px;
+left:2px;
+
+    font-family: 'Helvetica Neue LT Std';
+       color:#3c3b83;
+  width:90%;
+}
+.bar-modal2 .bar-modal-header .bar-modal-close2{
+  position: absolute;
+  right:-15px;
+  top:-5px;
+}
+.bar-modal2 .close-header{
+  position: relative;
+  right:0px;
+}
+
+/* ------------------- */
+
+.custom-content2{
+  position: relative;
+
+}
+.news-title-modal{
+    font-family: 'Helvetica Neue LT Std';
+      color:#3c3b83;
+
+}
+
+.news-posted-modal{
+  position: relative;
+  top:-7px;
+  z-index:2;
+    font-family: 'Helvetica Neue LT Std';
+      color:#3c3b83;
+}
+.news-desc-modal{
+  font-family: 'Helvetica Neue LT Std';
+  font-weight: none;
+}
+
+.modal-line{
+  height:1px;
+  position: relative;
+  z-index: 4;
+  top:-7px;
+  background-color:red;
+}
+
+.news-modal-padding{
+  min-width:auto;
+ padding-bottom: 12px;
+ padding-left:5px;
+ padding-right:5px;
+}

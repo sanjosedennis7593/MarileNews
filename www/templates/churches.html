@@ -1,0 +1,23 @@
+<ion-view view-title="Churches">
+	<ion-content class="church-bg">
+ 			
+
+ <div class="card border-news news-box" ng-repeat="churches in churches" ng-click="showChurches(churches)" repeat-loading>
+    <a class="item item-thumbnail-left">
+<img src="{{churches.Image}}">
+
+<h2 class="title-news church-header1"><b>{{churches.Name}}</b></h2>
+<h3 class="title-news church-header2"><b>{{churches.Location}}</b></h3>
+
+
+ <!-- <p ng-bind-html="newslist.description" class="description"></p> -->
+
+  <div class="footer">
+
+  </div>
+
+</a>
+
+</div>
+</ion-content>
+</ion-view>

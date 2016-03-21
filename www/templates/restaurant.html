@@ -1,0 +1,24 @@
+<ion-view view-title="Restaurant">
+
+	<ion-content class="tourist destionation-container restaurant-bg">
+	
+
+
+		    <div class="card border-news news-box" ng-repeat="restaurant in restaurant" ng-click="showRestaurant(restaurant)" repeat-loading>
+    <a class="item item-thumbnail-left">
+<img src="{{restaurant.Image}}">
+
+<h2 class="title-news restaurant-header1"><b>{{restaurant.Name}}</b></h2>
+<h3 class="title-news restaurant-header2"><b>{{restaurant.Location}}</b></h3>
+
+ <!-- <p ng-bind-html="newslist.description" class="description"></p> -->
+
+  <div class="footer">
+
+  </div>
+
+</a>
+
+</div>
+	</ion-content>
+</ion-view>

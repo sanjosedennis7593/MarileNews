@@ -1,0 +1,32 @@
+<ion-view view-title="Resorts">
+	<ion-content class="tour-content-background" zooming="true" direction="xy">
+
+			<div class="card">
+				<h2>{{resortObject.Name}}</h2>
+			</div>
+			<div class="card">
+				<img src="{{resortObject.CoverImage}}" class="resort-image" width="100%">
+				 
+			</div>
+	
+			<div class="card description-content">
+				<h5 align="justify"><b>{{resortObject.Location}}</b></h5><br>
+				<p align="justify">{{resortObject.Description}}</p>
+			</div>
+
+				<div class="card description-content" ng-click="showRouteMap(resortObject.RouteImage)">
+					<center>
+				<h3 align="justify">Show Route Map</h3>
+					</center>
+			</div>
+<!--
+				<div class="card description-content">
+				<center>
+				<h4 align="justify"><a href="{{resortObject.Url}}" ng-click="redirectUrl(resortObject.Url)" target="_blank">Visit Website</a></h4>
+				</center>
+			</div>
+-->
+	</ion-content>
+</ion-view>
+
+

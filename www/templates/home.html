@@ -1,0 +1,32 @@
+<ion-view ng-controller="NewsCtrl">
+    
+    <ion-content class="news-background">
+  
+      <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="refreshData()">
+  </ion-refresher>
+
+  
+     <div class="card border-news news-box" ng-repeat="newslist in localNewsData | reverse" ng-click="openModal(newslist.Title,newslist.Description,newslist.Image,newslist.DatePosted)" repeat-loading>
+    <a class="item item-thumbnail-left">
+<img src="{{newslist.Image}}" width="300" height="300">
+
+<h2 class="title-news news-header1"><b>{{newslist.Title}}</b></h2>
+<h3 class="title-news news-header2" ><b>{{newslist.DatePosted}}</b></h3>
+
+
+ <!-- <p ng-bind-html="newslist.description" class="description"></p> -->
+
+</a>
+
+</div>
+<!--
+ <button class="item view-all" ng-click="plusLimit(10)" ng-show="localSavedData.length>0" ng-disabled="localSavedData.length<=newsLimit">
+ <center><h2><b>View More</b></h2></center>
+ </button>
+-->
+
+
+    </ion-content>
+</ion-view>

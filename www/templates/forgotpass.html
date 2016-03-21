@@ -1,0 +1,53 @@
+<ion-view view-title="MarileNews">
+	
+	<ion-content class="feedbackbg">
+	
+<div class="list card" id = "cfed">
+
+
+ <div class = "item item-divider" id = "cheadbkg" >
+
+ 
+    <center>
+    <h3 id = "chtxt1"><i class="ion-person-stalker"></i>&nbspInteractive Chat<h3>
+    <p  id = "chtxt2">Conversation with PIO Staff</p>
+  
+    </center>
+
+</div>
+    
+
+
+ <div class="item item-wrap padding">
+<center>    
+
+ <label class="item item-input item-floating-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username" class="input-form" ng-model="user.username">
+  </label>
+
+    <button class="button button-block button-positive" ng-click="generateSecurityQuestion(user.username)" ng-disabled="user.password=='' || user.username==null || user.username==''">Generate Security Question</button>
+
+    <br>
+
+    <label class="item item-input item-floating-label">
+        <h4>{{userInfo.SecurityQuestion}}</h4><br>
+        
+    </label><br>
+     <label class="item item-input item-floating-label">
+    <span class="input-label">Answer</span>
+    <input type="text" placeholder="Answer" class="input-form" ng-model="user.answer">
+  </label><br><br>
+    <button class="button button-block button-positive" ng-click="answerSecurityQuestion(user.answer)" ng-disabled="user.answer=='' || user.answer==null || user.answer==''">Submit</button>
+
+
+   
+
+  </center>
+      
+   
+      
+</div>
+
+	</ion-content>
+</ion-view>

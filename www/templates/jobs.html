@@ -1,0 +1,54 @@
+<ion-view>
+ <div class="item item-divider" id = "job-hed">
+
+  <label class="item item-input" id = "putin">
+
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Enter keyword" ng-model="searchPosition" >
+  </label>
+
+</div>
+
+
+  <ion-content class="jobs-container">
+
+<div class = "list" id = "jobsback">
+
+ 
+
+<!-- ng-repeat="jobs in jobArray | orderBy:'-DatePosted' | filter:searchPosition" -->
+<div class="list jobsnel" >
+
+
+<a href="#/app/jobscontent" id="job-text" ng-click="sendData(jobs)">
+
+  <div class="item job-head">
+    <h2 id = "jobstitle"><b>Software Engineer</b></h2>
+    <h4 id="jobs-desc"><b>Trend Micro</b></h4>
+    <h4 id="jobs-desc">Date Posted: January 12, 2016</h4>
+    <h4 id="jobs-desc">Click to View Details</h4>
+       <hr id="about-border">
+  </div>
+
+</a>
+
+<a href="#/app/jobscontent" id="job-text" ng-click="sendData(jobs)">
+
+  <div class="item job-head">
+    <h2 id = "jobstitle"><b>Software Engineer</b></h2>
+    <h4 id="jobs-desc"><b>Trend Micro</b></h4>
+    <h4 id="jobs-desc">Date Posted: January 12, 2016</h4>
+    <h4 id="jobs-desc">Click to View Details</h4>
+       <hr id="about-border">
+  </div>
+
+</a>
+
+
+
+</div>
+
+</div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,48 @@
+<ion-view>
+		<ion-content>
+
+		
+		
+		<div class="list">
+
+				<div class="bar bar-header bar-positive header-pos">
+						<h5 class="title">Bulacan Area</h5>
+				</div>
+				<a href="#/app/weather" class="item item-avatar" href="#" ng-repeat="locationList in nearList | reverse" ng-click="sendData(locationList)">
+      				<img src="{{locationList.icon}}" width="75" height="75">
+    				<h2 ><b>{{locationList.location}}</b></h2>
+    				<h5><b>Last Update: {{locationList.last_update}}</b></h5>
+   			</a>
+		</div>
+		<div class="list">
+			<div class="bar bar-header bar-positive header-pos">
+						<h5 class="title">Other Areas</h5>
+				</div>
+				<a href="#/app/weather" class="item item-avatar" href="#" ng-repeat="locationList in locationList" ng-click="sendData(locationList)" >
+      				<img src="{{locationList.icon}}" width="75" height="75">
+    				<h2><b>{{locationList.location}}</b></h2>
+    				<h5><b>Last Update: {{locationList.last_update}}</b></h5>
+   			</a>
+
+		</div>
+
+<div class="list">
+				<center>
+			<div class="weather-header">
+
+						<div class="message-container">
+
+			<h4 class="p-by">Powered by</h4>
+		</div>
+				<span class="powered-image"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQVGfWVFGwIZnxyF-Fldipwbo9bKJpCcfrZgQNpz8e-cnuix-q4" width="150" height="75"><br>
+					<h5>Project Noah</h5>
+				</span>
+				<span class="powered-image"><img src="http://www.weather-manila.com/images/wm1.jpg" width="150" height="75"><br>
+					<h5>Weather Manila</h5></span>
+			
+			</div>
+		</center>
+		</div>
+
+	</ion-content>
+</ion-view>

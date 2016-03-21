@@ -1,0 +1,39 @@
+<ion-view>
+	
+	<ion-content class="login-padding">
+	
+<div class="list card" id = "cfed">
+
+
+
+
+ <div class="item item-wrap padding">
+<center>    
+
+ <label class="item item-input item-floating-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username" class="input-form" ng-model="user.username">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password" ng-model="user.password">
+  </label>
+  
+
+  </center>
+      
+   
+      
+</div></div>
+
+<div class="item">
+     <button class="button button-block login-button-color" ng-click="loginUser(user.username,user.password)">Login</button>
+    <br>
+     <button class="button button-block  login-button-color" ng-click="goToRegister()">Register</button><br><br>
+    <button class="button button-block  login-button-color" ng-click="showForgotPassword()">Forgot Password?</button>
+</div>
+
+	</ion-content>
+</ion-view>
+
+<!-- ng-disabled="user.password==null || user.password=='' || user.username==null || user.username==''" -->

@@ -1,0 +1,402 @@
+<ion-view ng-controller="HomeCtrl">
+<!--
+<ion-tabs class="tabs-icon-top tabs-balanced tabs-top">
+    <ion-tab title="Connections" icon-off="ion-ios-people-outline" icon-on="ion-ios-people" ng-click="changeSection(0)"></ion-tab>
+    <ion-tab title="Requests" icon-off="ion-ios-personadd-outline" icon-on="ion-ios-personadd" ng-click="changeSection(1)"></ion-tab>
+    <ion-tab title="Search" icon-off="ion-ios-search" icon-on="ion-ios-search-strong" ng-click="changeSection(2)"></ion-tab>
+</ion-tabs>
+
+-->
+  <ion-content scroll="false" class="homepage-content">
+
+      <tab-slide-box id = "slidescon">
+                    <ion-scroll class="tsb-icons"  id = "linej" scrollbar-x="false" direction="x">
+                        <div class="tsb-ic-wrp">
+                            <a href="javascript:;" id="tablinks"><span >HOME</span></a>
+                            <a href="javascript:;" id="tablinks"><span>NEWS</span></a>
+                             <a href="javascript:;" id="tablinks"><span>EVENTS</span></a>
+                             <a href="javascript:;" id="tablinks"><span>JOBS</span></a>
+                            <a href="javascript:;"  id="tablinks-custom"><span>TRAFFIC UPDATE</span></a>
+                           
+                            
+                            <a href="javascript:;" id="tablinks-custom2"><span>PROGRAMS</span></a>
+                            <a href="javascript:;" id="tablinks-custom2"><span>WEATHER</span></a>
+                            <a href="javascript:;" id="tablinks-custom2"><span>FEEDBACK</span></a>
+
+                        </div>
+                  
+
+                    </ion-scroll>
+              
+
+
+                    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)" active-slide="activeSlide" class="slide-background" does-continue="true"  >
+
+                        <ion-slide class="slide-background"  dynamic-height>
+                        <br>
+                                     <ion-scroll class="slider-content-main" ng-controller="MainCtrl">
+                 
+
+  <!-- <ion-spinner class="loading-spinner" icon="spiral" ng-hide="eventFlag==false"></ion-spinner> -->
+
+
+<div class="list eventlist" id="fed" ng-click="openModal('1','1','1','1')">
+
+        <a href="#">
+            <div class="featured-news">
+              <h6 class="featured-title">FEATURED NEWS</h6>
+              <div class="featured-news-title">
+                  Mahigit 300 guro at punong-guro, binigyan ng Master's Degree Scholarship
+
+              </div>
+            </div>
+  
+             <img src="../img/church.jpg"  width="100%" height="200">
+
+ 
+
+
+</a>
+
+</div>
+<div class="latest-container">
+  <h1>LATEST</h1>
+</div>
+
+         <div class="list newsfeed" ng-init="getImage(newslist.$id,$index)" ng-repeat="newslist in latestNews" ng-click="openLatestNewsModal(newslist,imageString[$index])" >
+                            
+
+    <img  ng-src="{{imageString[$index]}}"    width="100%" height="195">
+
+ 
+ <div class="news-image-title">
+   <span class="news-date2" align="left">{{newslist.DatePosted}}</span>
+  {{newslist.Title}}
+
+ 
+
+ </div>
+
+   <hr id="news-border2">
+
+</div>
+ 
+
+
+
+
+<!--  <hr id="news-border"> -->
+
+
+
+
+
+  
+
+</ion-scroll>
+                        </ion-slide>
+                    
+                    <ion-slide class="slide-background"     dynamic-height>
+                    <ion-content class="slider-content-news" ng-controller="NewsCtrl">
+                   
+                    <div class="news-content-padding">
+
+                    <ion-spinner class="loading-spinner" icon="spiral" ng-hide="newsFlag==false"></ion-spinner>
+                            <div class="list newsfeed" ng-init="getImage(newslist.$id,$index)" ng-repeat="newslist in localNewsData | reverse" ng-click="openModal(newslist.Title,newslist.Description,imageString[$index],newslist.DatePosted)" >
+                            
+
+    <img  ng-src="{{imageString[$index]}}"    width="100%" height="195">
+  
+ 
+ <div class="news-image-title">
+ <span class="news-date2" align="left">{{newslist.DatePosted}}</span>
+  {{newslist.Title}}
+
+ 
+
+ </div>
+
+   <hr id="news-border2">
+
+</div>
+ 
+
+
+
+ <ion-infinite-scroll ng-if="noMoreItemsAvailable()" on-infinite="loadMore()" distance="1%" icon="ion-spinner" >
+</ion-infinite-scroll>
+</div>
+
+</ion-content>
+                        </ion-slide>
+
+                         <ion-slide class="slide-background"  dynamic-height>
+        <ion-scroll class="slider-content-event" ng-controller="EventCtrl">                   
+ 
+
+   <ion-spinner class="loading-spinner" icon="spiral" ng-hide="eventFlag==false"></ion-spinner>
+
+
+ <div class="list newsfeed"  ng-repeat="event in eventlist | orderBy:'-EventDate'" ng-click="openEventModal(event.EventTitle,event.Description,event.EventDate,event.Place,event.Image)">
+                         
+
+  <img src="{{event.Image}}"  width="100%" height="195">
+
+ 
+ <div class="news-image-title">
+
+<div class="title-name"> <b>{{event.EventTitle}}</b></div>
+
+{{event.EventDate}}
+  
+ </div>
+
+   <hr id="news-border2">
+
+</div>
+
+
+
+
+
+
+
+</ion-scroll>
+                        </ion-slide>
+
+                          <ion-slide  dynamic-height>
+                          
+  <ion-scroll class="job-slider-content" ng-controller="JobsCtrl">
+ 
+  <ion-spinner class="loading-spinner" icon="spiral" ng-hide="jobsFlag==false"></ion-spinner>
+<div class = "list" id = "jobsback" ng-show="jobsFlag==false">
+
+  <div class="item item-divider" id = "job-hed">
+
+  <label class="item item-input" id = "putin">
+
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="text" placeholder="Enter keyword" ng-model="searchPosition" >
+  </label>
+
+</div>
+
+
+
+<div class="list jobsnel">
+
+
+<a href="#" id="job-text" ng-click="sendData(jobs)"  ng-repeat="jobs in jobArray | orderBy:'-DatePosted' | filter:searchPosition">
+
+ <div class="item job-head">
+  
+
+
+ <h2 id = "jobstitle"><b>{{jobs.Position}}</b></h2>
+   <h4 id = "jobs-desc"><b>{{jobs.Company}}</b></h4>
+     <h4 id = "jobs-desc"> Date Posted:</b>&nbsp;{{jobs.DatePosted}}</h4>
+
+     <hr id="about-border">
+  </div>
+
+
+
+
+</a>
+
+
+
+</div>
+
+</div>
+
+  </ion-scroll>
+
+</ion-slide>
+
+                        
+                        <ion-slide ng-controller="TrafficCtrl" dynamic-height>
+                        <br> 
+                    <ion-scroll class="slider-content-traffic" >
+                <div class="traffic-content-padding">
+                  <ion-spinner class="loading-spinner" icon="spiral" ng-hide="flag==false"></ion-spinner>
+  <!--
+  <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="loadTrafficData()">
+  </ion-refresher>
+ -->
+  <div class="bar bar-header bar-dark header-pos" >
+    
+   <div class="col traffic-label"><center><img src="img/green.png" height="25" width="15"><span class="status-label">Light</span></center></div>
+     <div class="col traffic-label"><center><img src="img/dilaw.png" height="25" width="15"><span class="status-label">Moderate</span></center></div>
+      <div class="col traffic-label"><center><img src="img/pula.png" height="25" width="15"><span class="status-label">Heavy</span></center></div>
+</div>
+  
+  <div class="traffic-label-heading bar">
+    
+   <div class="col traffic-label-2"><center>Northbound</center></div>
+    <div  class="col traffic-label-2"><center>Location</center></div>
+     <div  class="col traffic-label-2"><center>Southbound</center></div>
+</div>
+       <div id="traffic-pane" height="200">
+            
+            <ul class="list">
+            <li class="item"  ng-repeat="traffic in trafficArray | orderBy:'-MilitaryTime'">
+              <div class="row traffic-content">
+                 <div class="col nbound traffic-type"><center><img ng-src='{{traffic.StatusImageN}}' height="70" width="35"></center></div>
+
+
+                  <div class="col col-50 traffic-loc"><center><span class="traffic-details">{{traffic.Location}}</span><br><span class="traffic-details">{{traffic.Barangay}}</span><br>
+                    <span class="traffic-details">As of {{traffic.Time}}</span><!--<br>{{traffic.Date}} <br>--><!-- {{traffic.Time}}</center>--></div><br>
+
+  <div class="col nbound traffic-type"><center><img ng-src='{{traffic.StatusImageS}}' height="70" width="35"></center></div>
+     
+</div>
+            </li>
+
+      </ul>
+
+
+
+       </div>
+
+    
+
+    </div>
+  </ion-scroll>
+ </ion-slide>
+
+                        
+              
+                      
+
+                           <ion-slide  dynamic-height>
+                          
+  <ion-scroll class="program-slider-content" ng-controller="ProgramCtrl">
+                 
+
+   <ion-spinner class="loading-spinner" icon="spiral"></ion-spinner>
+
+ <div class="list newsfeed" ng-repeat="program in programList.reverse()" ng-click="openProgramModal(program)" >
+                         
+
+   <img src="{{program.Image}}"  width="100%" height="200">
+
+ 
+ <div class="news-image-title">
+
+<div class="title-name"> <b>{{program.ProgramName}}</b></div>
+
+  
+ </div>
+
+   <hr id="news-border2">
+
+</div>
+
+
+  
+
+</ion-scroll>
+                        </ion-slide>
+
+                         <ion-slide  dynamic-height>
+                          <br>
+  <ion-scroll class="job-slider-content" ng-controller="WeatherListCtrl">
+  
+    <div class="list">
+      <center>
+        <div class="weather-header-first header-pos">
+          <center>
+            <h5 class="weather-title">Bulacan Area</h5>
+          </center>
+        </div>
+      </center>
+        <a href="#/app/weather" class="item item-avatar" href="#" ng-repeat="locationList in nearList" ng-click="sendData(locationList)">
+              <img src="{{locationList.icon}}" width="75" height="75">
+            <h2 class="weather-loc"><b>{{locationList.location}}</b></h2>
+            <h5 class="last-update"><b>Last Update: {{locationList.last_update}}</b></h5>
+        </a>
+    </div>
+    <div class="list">
+      <center>
+      <div class=" weather-header-first header-pos">
+        <center>
+            <h5 class="weather-title">Other Areas</h5>
+          </center>
+        </div>
+      </center>
+        <a href="#/app/weather" class="item item-avatar" href="#" ng-repeat="locationList in locationList" ng-click="sendData(locationList)" >
+              <img src="{{locationList.icon}}" width="75" height="75">
+            <h2 class="weather-loc"><b>{{locationList.location}}</b></h2>
+            <h5 class="last-update"><b>Last Update: {{locationList.last_update}}</b></h5>
+        </a>
+
+    </div>
+
+<!--
+<div class="list">
+        <center>
+      <div class="weather-header">
+
+            <div class="message-container">
+
+      <h4 class="p-by">Powered by</h4>
+    </div>
+        <span class="powered-image"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQVGfWVFGwIZnxyF-Fldipwbo9bKJpCcfrZgQNpz8e-cnuix-q4" width="150" height="75"><br>
+          <h5>Project Noah</h5>
+        </span>
+        <span class="powered-image"><img src="http://www.weather-manila.com/images/wm1.jpg" width="150" height="75"><br>
+          <h5>Weather Manila</h5></span>
+      
+      </div>
+    </center>
+    </div>
+-->
+</ion-scroll>
+                        </ion-slide>
+
+
+     <ion-slide class="slide-background"  dynamic-height>
+                                     <ion-scroll class="slider-content-feedback" ng-controller="LoginCtrl">
+                                      <div class="list card" id = "cfed">
+
+
+
+
+
+ <div class="item item-wrap padding">
+<center>    
+
+ <label class="item item-input item-floating-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username" class="input-form" ng-model="user.username">
+  </label>
+   <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password" ng-model="user.password">
+  </label>
+  
+
+  </center>
+      
+   
+      
+</div></div>
+
+<div class="item">
+     <button class="button button-block login-button-color" ng-click="loginUser(user.username,user.password)">Login</button>
+    <br>
+     <button class="button button-block  login-button-color" ng-click="goToRegister()">Register</button><br>
+    <button class="button button-block  login-button-color" ng-click="showForgotPassword()">Forgot Password?</button>
+</div>
+                        </ion-scroll>
+                        </ion-slide>
+                       
+
+                    </ion-slide-box>
+            </tab-slide-box>
+
+</ion-content>
+</ion-view>

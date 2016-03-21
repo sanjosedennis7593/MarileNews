@@ -1,0 +1,163 @@
+<ion-side-menus>
+  <!--Drawer Changes-->
+  <ion-nav-bar align-title="left" class="app-header">
+  <!--
+    <ion-nav-back-button class="button-icon icon ion-ios7-arrow-back">
+    </ion-nav-back-button>
+  -->
+     <ion-nav-buttons side="left">
+    <button menu-and-drawer-toggle class="button button-icon button-clear ion-navicon"></button><!--Drawer Change-->
+  </ion-nav-buttons>
+   <ion-nav-title class="image-nav">
+      <div class="nav-image-container">
+    <img src="img/marilenews.jpg" class="marilenews-icon" width="130" height="27">
+  </div>
+    </ion-nav-title>
+  </ion-nav-bar>
+  <ion-pane drawer-menu-content>
+    <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
+  </ion-pane>
+  
+  <!--Drawer Changes-->
+  <drawer side="left" canDrag="true">
+
+      <ion-content class="header-menu">
+   
+      <ion-list class="ion-list-padding">
+         <div class="menu-line">
+                <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(0)">
+                <i class="ion-home" id = "sidecons"></i>&nbsp;
+         <span id = "sidetxt">   Home</span>
+        </ion-item>
+</div>
+
+ <div class="menu-line">
+        <ion-item nav-clear menu-and-drawer-close href="#/app/about">
+        <i class="ion-ios-browsers" id = "sidecons"></i>&nbsp;
+          <span id = "sidetxt">   About</span>
+        </ion-item>
+</div>
+
+ <div class="menu-line">
+        <ion-item nav-clear menu-and-drawer-close href="#/app/newsletter">
+        <i class="ion-ios-browsers" id = "sidecons"></i>&nbsp;
+          <span id = "sidetxt">   Newsletter</span>
+        </ion-item>
+</div>
+ <div class="menu-line">
+           <ion-item nav-clear menu-and-drawer-close href="#/app/contact">
+        <i class="ion-ios-telephone" id = "sidecons"></i>&nbsp;
+       <span id = "sidetxt">  Hotline</span>
+        </ion-item>
+</div>
+
+        <ion-item nav-clear>
+          <div class="side-menu-section">
+              SECTIONS
+          </div>
+        </ion-item>
+         <div class="menu-line">
+          <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(1)">
+
+           <i class="ion-ios-paper"  id = "sidecons"></i>&nbsp;
+      <span id = "sidetxt">  News </span>
+        </ion-item>
+    
+      </div>
+      
+       <div class="menu-line">
+
+             <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(3)">
+         <i class="ion-android-calendar" id = "sidecons"></i>&nbsp;
+        <span id = "sidetxt">  Events</span>
+        </ion-item>
+      </div>
+       <div class="menu-line">
+            <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(4)">
+         <i class="ion-ios-briefcase" id = "sidecons"></i>&nbsp;
+        <span id = "sidetxt">   Jobs</span>
+        </ion-item>
+      </div>
+       <div class="menu-line">
+         <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(2)">
+         <i class="ion-android-car" id = "sidecons"></i> &nbsp;
+         <span id = "sidetxt"> Traffic Update</span>
+        </ion-item>
+      </div>
+        <div class="menu-line">
+          <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(5)">
+
+           <i class="ion-ios-paper"  id = "sidecons"></i>&nbsp;
+      <span id = "sidetxt">  Programs </span>
+        </ion-item>
+    
+      </div>
+       <div class="menu-line">
+        <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(6)" >
+          <i class="ion-ios-rainy" id = "sidecons"></i>&nbsp;
+      <span id = "sidetxt">    Weather Forecast </span>
+        </ion-item>
+      </div>
+
+          <div class="menu-line">
+        <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(7)">
+          <i class="ion-ios-rainy" id = "sidecons"></i>&nbsp;
+      <span id = "sidetxt">    Feedback </span>
+        </ion-item>
+      </div>
+      <!--
+       <div class="menu-line">
+        <ion-item nav-clear menu-and-drawer-close href="#/app/flood">
+          <i class="ion-flash" id = "sidecons"></i>&nbsp;
+       <span id = "sidetxt">   Flood Updates </span>
+        </ion-item>
+      </div>
+    -->
+            <!--
+       <div class="menu-line">
+  
+          <ion-item nav-clear menu-and-drawer-close href="#/app/tourism">
+          <i class="ion-android-compass" id = "sidecons"></i>&nbsp;
+        <span id = "sidetxt"> Tourist Attraction</span>
+        </ion-item>
+    
+</div>
+  -->
+  <!--
+<div class="menu-line">
+
+          <ion-item nav-clear menu-close href="#/app/incident">
+          <i class="ion-chatboxes" id = "sidecons"></i>
+       <span id = "sidetxt">   Report Incident</span>
+        </ion-item>
+</div>
+-->
+
+        <!--
+        <ion-item nav-clear menu-close href="#/app/business">
+        <i class="ion-briefcase" id = "sidecons"></i>&nbsp;
+        <span id = "sidetxt">    Business Directory</span>
+        </ion-item>
+         <ion-item nav-clear menu-close href="#/app/government">
+         <i class="ion-ribbon-b" id = "sidecons"></i>&nbsp;
+         <span id = "sidetxt">   Public Officials</span>
+        </ion-item>
+        
+        
+          
+        
+
+        <ion-item nav-clear menu-close href="#/app/incident">
+          <i class="ion-alert" id = "sidecons"></i>&nbsp;
+       <span id = "sidetxt">  Report Incident</span>
+        </ion-item>
+         <ion-item nav-clear menu-close href="#/app/login">
+          <i class="ion-chatbubbles" id = "sidecons"></i>&nbsp;
+        <span id = "sidetxt">  Interactive Chat</span>
+        </ion-item>
+      </ion-list>
+    -->
+  </ion-list>
+    </ion-content>
+  </drawer>
+</ion-side-menus>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+  
+   <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, target-densitydpi=medium-dpi, user-scalable=0" /> -->
+    <title></title>
+     <link rel="icon" href="images/logo.png" type="image/png" >
+    <link href='https://fonts.googleapis.com/css?family=RobotoDraft:400,500,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="http://daneden.github.io/animate.css/animate.min.css">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="lib/ionic-material/ionic.material.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/tabSlideBox.css" rel="stylesheet">
+    <link href="css/drawer.css" rel="stylesheet">
+    
+    <link href="css/nifty.modal.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
+
+       <script src="cordova.js"></script>
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/ionic-material.min.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+
+     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+     <script src="lib/ionic/js/ionic.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="js/angularfire.min.js"></script>
+
+
+
+
+
+<link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+    <script src="js/loading-bar.js"></script>
+
+    <link rel='stylesheet' href='css/loadingbar.css' type='text/css' media='all' />
+<link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+<script src="js/ionic-drawer.js"></script>
+
+<script src="https://cdn.firebase.com/libs/firebase-util/0.2.5/firebase-util.min.js"></script>
+<script src="js/angular-preload-image.js"></script>
+
+
+<script>
+
+
+    document.addEventListener("deviceready", deviceIsReady, false);
+
+    function deviceIsReady() {
+  
+        console.log("ready to fire!");
+    }
+
+</script>
+
+<link href='https://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+</head>
+<body ng-app="starter">
+
+    <ion-nav-view></ion-nav-view>
+
+   
+  
+ <script type="text/ng-template" id="newscontent.html">
+   <ion-modal-view class="ion-nifty-modal2">
+
+  <div class="bar-modal2">
+  <div class="bar-modal-header">
+  <span class="span-header2">  News</span>
+    <span class="bar-modal-close2">
+   <button class="button button-clear icon ion-close-modal" ng-click="closeModal()"></button>
+  </span>
+  </div>
+
+  </div>
+    <div class="ion-modal-content-custom custom-content2">
+
+      <ion-content class="news-modal-padding">
+  <br>
+       <div class="list news-content">
+       
+          <div class="item item-image">
+            <img src="{{fullcontent.newsimg}}" width="100%" height="195">
+          </div>
+          <br> <br> 
+
+          <div class="desc-box">
+        <h3 class="news-title-modal">{{fullcontent.newstitle}}</h3> 
+          <h6 class="news-posted-modal">{{fullcontent.newsdate}} </h6>
+ <hr class="modal-line">
+        <p class="news-desc-modal" align="justify">
+{{fullcontent.newsdesc}}
+
+          </p>
+  
+          </div>
+          </div>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+  </script>
+
+
+  <script type="text/ng-template" id="programcontent.html">
+    <ion-modal-view class="ion-nifty-modal2">
+
+  <div class="bar-modal2">
+  <div class="bar-modal-header">
+  <span class="span-header2">  Programs</span>
+    <span class="bar-modal-close2">
+   <button class="button button-clear icon ion-close-modal" ng-click="closeModal()"></button>
+  </span>
+  </div>
+
+  </div>
+    <div class="ion-modal-content-custom custom-content2">
+
+      <ion-content class="news-modal-padding">
+  <br>
+       <div class="list news-content">
+       
+          <div class="item item-image">
+            <img src="{{program.Image}}" width="100%" height="195">
+          </div>
+          <br> <br> 
+
+          <div class="desc-box">
+        <h3 class="news-title-modal">{{program.ProgramName}}</h3> 
+          <h6 class="news-posted-modal">{{program.ProgramDate}} </h6>
+ <hr class="modal-line">
+        <p class="news-desc-modal" align="justify">
+{{program.ProgramDescription}}
+
+          </p>
+  
+          </div>
+          </div>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+  </script>
+
+
+  <script type="text/ng-template" id="maincontent.html">
+    <ion-modal-view class="ion-nifty-modal2">
+
+  <div class="bar-modal2">
+  <div class="bar-modal-header">
+  <span class="span-header2">  Featured News</span>
+    <span class="bar-modal-close">
+   <button class="button button-clear icon ion-close-modal" ng-click="closeModal()"></button>
+  </span>
+  </div>
+
+  </div>
+    <div class="ion-modal-content-custom custom-content2">
+
+      <ion-content class="news-modal-padding">
+          <br>
+        <img src="img/ts.jpg" width="100%" height="195">
+           <h3 class="news-title-modal">asdasd</h3>
+           <h6 class="news-posted-modal">December 9, 2015 MONDAY</h6>
+           <hr class="modal-line">
+        <p  class="news-desc-modal" align="justify">This is content. This is content. This is content. This is content. This is content. This is content. This is content. 
+        This is content. This is content. This is content. This is content. This is content. This is content. This is content. This is content. 
+        This is content. This is content. This is content. This is content. This is content. This is content. This is content. This is content. 
+   </p>
+
+      </ion-content>
+    </div>
+  </ion-modal-view>
+  </script>
+
+
+   <script type="text/ng-template" id="latestnewscontent.html">
+   <ion-modal-view class="ion-nifty-modal2">
+
+  <div class="bar-modal2">
+  <div class="bar-modal-header">
+  <span class="span-header2">  Latest News</span>
+    <span class="bar-modal-close2">
+   <button class="button button-clear icon ion-close-modal" ng-click="closeModal()"></button>
+  </span>
+  </div>
+
+  </div>
+    <div class="ion-modal-content-custom custom-content2">
+
+      <ion-content class="news-modal-padding">
+  <br>
+       <div class="list news-content">
+       
+          <div class="item item-image">
+            <img src="{{imageString2}}" width="100%" height="195">
+          </div>
+          <br> <br> 
+
+          <div class="desc-box">
+        <h3 class="news-title-modal">{{latestnews.Title}}</h3> 
+          <h6 class="news-posted-modal">{{latestnews.DatePosted}} </h6>
+ <hr class="modal-line">
+        <p class="news-desc-modal" align="justify">
+{{latestnews.Description}}
+
+          </p>
+  
+          </div>
+          </div>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+  </script>
+
+
+
+
+
+
+
+
+
+   <script type="text/ng-template" id="aboutMarilao.html">
+<ion-modal-view class="ion-nifty-modal">
+
+  <div class="bar-modal">
+  <div class="bar-modal-header">
+  <span class="span-header">  History</span>
+    <span class="bar-modal-close">
+   <button class="button button-clear icon ion-close-modal" ng-click="closeModal()"></button>
+  </span>
+  </div>
+
+  </div>
+    <div class="ion-modal-content-custom custom-content">
+
+      <ion-content class="padding">
+
+        <p align="justify">{{offlineData.description}}</p>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+  </script>
+
+
+
+
+
+ <script type="text/ng-template" id="eventcontent.html">
+   <ion-modal-view class="ion-nifty-modal2">
+
+  <div class="bar-modal2">
+  <div class="bar-modal-header">
+  <span class="span-header2">  Event</span>
+    <span class="bar-modal-close2">
+   <button class="button button-clear icon ion-close-modal" ng-click="closeModal()"></button>
+  </span>
+  </div>
+
+  </div>
+    <div class="ion-modal-content-custom custom-content2">
+
+      <ion-content class="news-modal-padding">
+  <br>
+       <div class="list news-content">
+       
+          <div class="item item-image">
+            <img src="{{eventDesc.image}}" width="100%" height="195">
+          </div>
+          <br> <br> 
+
+          <div class="desc-box">
+        <h3 class="news-title-modal">{{eventDesc.title}}</h3> 
+          <h6 class="news-posted-modal">{{eventDesc.date}} </h6>
+ <hr class="modal-line">
+        <p class="news-desc-modal" align="justify">
+{{eventDesc.desc}}
+
+          </p>
+  
+          </div>
+          </div>
+      </ion-content>
+    </div>
+  </ion-modal-view>
+  </script>
+</body>
+</html>

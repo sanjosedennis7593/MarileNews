@@ -1,0 +1,44 @@
+<ion-view view-title="Public Officials">
+	<ion-content ng-init="initializeData()">
+		
+			<div class="list">
+				<div class="bar bar-header bar-assertive header-pos" ng-show="govt.officials.Mayor">
+					<h5 class="title" align="left">Municipal Mayor</h5>
+				</div>
+
+				
+				 <a class="item item-avatar" href="#" ng-repeat="data in govt.officials.Mayor" ng-click="openModal(data.Lastname,data.Firstname,data.Initial,data.Position,data.Description,data.Image)">
+      				<img src="{{data.Image}}">
+    				  <h2><b>{{data.Lastname}}, {{data.Firstname}}</b></h2>
+      					<p>{{data.Position}}</p>
+      					
+   			</a>
+			</div>
+
+			<div class="list">
+					<div class="bar bar-header bar-positive header-pos" ng-show="govt.officials.ViceMayor">
+						<h5 class="title">Municipal Vice Mayor</h5>
+				</div>
+
+				<a class="item item-avatar" href="#" ng-repeat="data in govt.officials.ViceMayor" ng-click="openModal('{{data.Lastname}}','{{data.Firstname}}','{{data.Initial}}','{{data.Position}}','{{data.Description}}','{{data.Image}}')">
+      				<img src="{{data.Image}}">
+    				  <h2><b>{{data.Lastname}}, {{data.Firstname}}</b></h2>
+      					<p>{{data.Position}}</p>
+   			</a>
+			</div>
+
+			<div class="list">
+					<div class="bar bar-header bar-balanced header-pos" ng-show="govt.officials.Councilor">
+						<h5 class="title">Municipal Councilor</h5>
+				</div>
+				
+				<a class="item item-avatar" href="#" ng-repeat="data in govt.officials.Councilor" >
+      				<img src="{{data.Image}}">
+    				  <h2><b>{{data.Lastname}}, {{data.Firstname}}</b></h2>
+      					<p>{{data.Position}}</p>
+   			</a>
+   			
+
+			</div>
+	</ion-content>
+</ion-view>

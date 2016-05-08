@@ -278,85 +278,46 @@ $scope.nearList = [];
   $scope.localNewsData = [];
   $scope.ctrX=0;
   $scope.ctrY=0;
-var isRefreshActive = false;
+
 $scope.fullcontent = {};
 $scope.newsFlag = true;
 
-  
+  $scope.loadingScroll = false;
+ $scope.newsFlag = true;
+  $scope.imageString = {};
+/************************************************************/
 
-  var currentDate = new Date();
-  var currentMonth = currentDate.getMonth()+1;
-  var year = currentDate.getFullYear();
+  var baseRef = new Firebase('https://marilenewsdatabase.firebaseio.com/News/Newsfeed');
+  // create a scrollable reference
+  var scrollRef = new Firebase.util.Scroll(baseRef, '$priority');
 
+  // create a synchronized array on scope
+  $scope.items = $firebaseArray(scrollRef);
+  // load the first three contacts
+  scrollRef.scroll.next(3);
 
+  // This function is called whenever the user reaches the bottom
+  $scope.loadMore = function() {
+    $scope.loadingScroll = true;
+    scrollRef.scroll.next(2);
 
-
-  $scope.refreshData = function () {
-
-      if(isRefreshActive==false){
-        
-      }
-      else{
-             $scope.$broadcast('scroll.refreshComplete');
-      }
+    if($scope.$broadcast('scroll.infiniteScrollComplete')){
+      $scope.loadingScroll = false;
+    }
   }
 
-  
- $scope.newsFlag = true;
-  $scope.imageString = [];
-       isRefreshActive = true;
-
-var currentDate = new Date();
-              var month = currentDate.getMonth() + 1;
-  var year = currentDate.getFullYear();
-  var monthW = ['January','February','March','April','May',
-  'June','July','August','September','October','November',
-  'December'];
-
-
-
-    var monthIndex = currentMonth-1;
-
-      if(monthIndex <0){
-        monthIndex = 0;
-      }
-
-            
-               var ref = new Firebase("https://marilenewsdatabase.firebaseio.com/News/Newsfeed/");
-        
-            $scope.localNewsData.length = 0;
-             var scrollRef = new Firebase.util.Scroll(ref, '$value');
-    
-               $scope.localNewsData = $firebaseArray(scrollRef);
-
-                console.log($scope.localNewsData);
-          
-          scrollRef.scroll.next(4);
-        $scope.newsFlag = false;
-      
-          
-            $scope.$broadcast('scroll.refreshComplete');
-            isRefreshActive=false;
-
- $scope.loadMore = function() {
-    scrollRef.scroll.next(4);
-
-    $scope.$broadcast('scroll.infiniteScrollComplete');
-  };
-
   $scope.noMoreItemsAvailable = function () {
-   
-  };
-
+    console.log("No");
+  }
   $scope.getImage = function (id,index) {
     
     $scope.ctrY = index;
-   $scope.imageString[index] = "img/ts.jpg"
+   $scope.imageString[id] = "img/ts.jpg"
     var imageRef = new Firebase("https://marilenewsdatabase.firebaseio.com/News/NewsImage");
    
     imageRef.child(id).on("value", function (snapshot){
       
-       $scope.imageString[index] = snapshot.val().Image;
+       $scope.imageString[id] = snapshot.val().Image;
 
 
     });
@@ -408,11 +369,46 @@ var currentDate = new Date();
     return items.slice().reverse();
   };
 })
+.directive('tapDetector',function($ionicGesture,$ionicScrollDelegate){
+  return{
+    restrict:'EA',
+    link:function(scope,element){
+      var startX,startY,isDown=false;
+      element.bind("mousedown touchstart", function(e){
+        e=(e.touches)?e.touches[0]:e;//e.touches[0] is for ios
+        startX = e.clientX;
+        startY = e.clientY;
+        isDown=true;
+        //console.log("mousedown",startX,startY);
+      });
+
+      element.bind("mousemove touchmove", function(e){
+        e=(e.touches)?e.touches[0]:e;//e.touches[0] is for ios
+        if(isDown){
+          var deltaX = Math.abs(e.clientX - startX);
+                var deltaY = Math.abs(e.clientY - startY);
+
+          if(deltaX > deltaY) {
+         
+          //console.log("horizontal move");
+            $ionicScrollDelegate.$getByHandle('mainScroll').freezeScroll(true);
+            }
+        }
+      });
+
+      element.bind("mouseup touchend", function(e){
+        isDown=false;
+        $ionicScrollDelegate.$getByHandle('mainScroll').freezeScroll(false);
+        //console.log("mouseup touchend");
+      });
+    }
+  }
+})
 
 
 .controller('MainCtrl', ['$scope','$firebase','cfpLoadingBar','$ionicModal','backcallFactory','$ionicSlideBoxDelegate','$firebaseArray', function ($scope,$firebase,cfpLoadingBar,$ionicModal,backcallFactory,$ionicSlideBoxDelegate,$firebaseArray){
 
-  $scope.imageString = [];
+  $scope.imageString = {};
 
     $ionicModal.fromTemplateUrl('maincontent.html', {
     scope: $scope,
@@ -423,10 +419,11 @@ var currentDate = new Date();
 
    $ionicModal.fromTemplateUrl('latestnewscontent.html', {
     scope: $scope,
-    animation: 'fadeSlideInRight'
+     animation: 'slide-in-up'
   }).then(function(modal) {
     $scope.modal = modal;
   });
+
 
 
   $scope.openModal = function(title,desc,img,date) {
@@ -477,12 +474,12 @@ $scope.latestNews = [];
                  $scope.getImage = function (id,index) {
     
     $scope.ctrY = index;
-   $scope.imageString[index] = "img/ts.jpg"
+   $scope.imageString[id] = "img/ts.jpg"
     var imageRef = new Firebase("https://marilenewsdatabase.firebaseio.com/News/NewsImage");
    
     imageRef.child(id).on("value", function (snapshot){
       
-       $scope.imageString[index] = snapshot.val().Image;
+       $scope.imageString[id] = snapshot.val().Image;
 
 
     });
@@ -536,21 +533,63 @@ $scope.latestNews = [];
     };
 })
 
+.directive('dynamicHeightJobs', function() {
+    return {
+        require: ['^ionSlideBox'],
+        link: function(scope, elem, attrs, slider) {
+            scope.$watch(function() {
+                return slider[0].__slider.selected();
+            }, function(val) {
+                //getting the heigh of the container that has the height of the viewport
+                var newHeight = window.getComputedStyle(elem.parent()[0], null).getPropertyValue("height");
+                if (newHeight) {
+                  var plusHeight = Math.abs(parseInt(newHeight)-120);
+      
+                    elem.find('ion-scroll')[0].style.height = plusHeight+'px';
+                }
+            });
+        }
+    };
+})
+
+
 
 .controller("EventCtrl",['$scope','$firebaseArray','$ionicModal','cfpLoadingBar','passData',function ($scope,$firebaseArray,$ionicModal,cfpLoadingBar,passData){
- 
-    var ref = new Firebase("https://marilenewsdatabase.firebaseio.com/News/Events").orderByChild("Status").equalTo("Active");;
-    $scope.eventlist = [];
-    $scope.eventDesc = {};
-    $scope.eventFlag = true;
-    ref.on("value", function (snapshot){
-        for(var x in snapshot.val()){
-               $scope.eventlist.push(snapshot.val()[x]);
-            }
-           
-             $scope.eventFlag = false;
-    });
 
+    $scope.eventFlag = true;
+
+    $scope.eventlist = [];
+
+    $scope.eventDesc = {};
+               var ref = new Firebase("https://marilenewsdatabase.firebaseio.com/News/Events/");
+        
+            $scope.eventlist.length = 0;
+             var scrollRef = new Firebase.util.Scroll(ref, '$value');
+    
+                $scope.eventlist = $firebaseArray(scrollRef);
+
+                console.log($scope.eventlist);
+          
+          scrollRef.scroll.next(4);
+     
+      
+          
+            $scope.$broadcast('scroll.refreshComplete');
+       
+          if( $scope.eventlist){
+                 $scope.newsFlag = false;
+          }
+
+ $scope.loadMore = function() {
+    scrollRef.scroll.next(4);
+
+    $scope.$broadcast('scroll.infiniteScrollComplete');
+  };
+
+  $scope.noMoreItemsAvailable = function () {
+   
+  };
+    
 
 
   $ionicModal.fromTemplateUrl('eventcontent.html', {
@@ -560,11 +599,11 @@ $scope.latestNews = [];
     $scope.eventModal = modal;
   });
 
-  $scope.openEventModal = function (title,desc,edate,place,image) {
-      $scope.eventDesc.title = title;
-    $scope.eventDesc.desc = desc;
-    $scope.eventDesc.date = edate;
-    $scope.eventDesc.place = place;
+  $scope.openEventModal = function (events,image) {
+      $scope.eventDesc.title2 =events.EventTitle;
+    $scope.eventDesc.desc =events.Description;
+    $scope.eventDesc.date = events.EventDate;
+    $scope.eventDesc.place = events.Place;
     $scope.eventDesc.image = image;
 
     $scope.eventModal.show();
@@ -578,6 +617,26 @@ $scope.latestNews = [];
 
   $scope.sendData = function (eventObject){
     passData.setData(eventObject);
+  }
+
+    $scope.ctrX=0;
+  $scope.ctrY=0;
+  $scope.EventImageString = {};
+
+  $scope.getEventImage = function (id,index) {
+    
+    $scope.ctrY = index;
+   $scope.EventImageString[id] = "img/ts.jpg"
+    var imageRef = new Firebase("https://marilenewsdatabase.firebaseio.com/News/EventImage");
+    
+    imageRef.child(id).on("value", function (snapshot){
+      
+       $scope.EventImageString[id] = snapshot.val().Image;
+
+
+    });
+    
+   
   }
 
 }])
@@ -1694,6 +1753,40 @@ $scope.loggedInUser = {};
   } 
 ])
 
+.directive('tapDetector',function($ionicGesture,$ionicScrollDelegate){
+  return{
+    restrict:'EA',
+    link:function(scope,element){
+      var startX,startY,isDown=false;
+      element.bind("mousedown touchstart", function(e){
+        e=(e.touches)?e.touches[0]:e;//e.touches[0] is for ios
+        startX = e.clientX;
+        startY = e.clientY;
+        isDown=true;
+        //console.log("mousedown",startX,startY);
+      });
+
+      element.bind("mousemove touchmove", function(e){
+        e=(e.touches)?e.touches[0]:e;//e.touches[0] is for ios
+        if(isDown){
+          var deltaX = Math.abs(e.clientX - startX);
+                var deltaY = Math.abs(e.clientY - startY);
+
+          if(deltaX > deltaY) {
+          //console.log("horizontal move");
+            $ionicScrollDelegate.$getByHandle('mainScroll').freezeScroll(true);
+            }
+        }
+      });
+
+      element.bind("mouseup touchend", function(e){
+        isDown=false;
+        $ionicScrollDelegate.$getByHandle('mainScroll').freezeScroll(false);
+        //console.log("mouseup touchend");
+      });
+    }
+  }
+})
 .directive('imgPreload', ['$rootScope', function($rootScope) {
     return {
       restrict: 'A',

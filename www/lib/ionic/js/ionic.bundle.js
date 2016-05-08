@@ -7020,8 +7020,9 @@ ionic.scroll = {
       var self = this, content, buttons;
 
       if (Math.abs(e.gesture.deltaY) > 5) {
-        self._didDragUpOrDown = true;
+        self._didDragUpOrDown = false;
       }
+
 
       // If we get a drag event, make sure we aren't in another drag, then check if we should
       // start one

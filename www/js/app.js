@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
-var app = angular.module('starter', ['ionic', 'starter.controllers','firebase','cfp.loadingBar','ionic.contrib.drawer','angular-preload-image']);
+var app = angular.module('starter', ['ionic', 'starter.controllers','firebase','cfp.loadingBar','ionic.contrib.drawer','angular-preload-image','infinite-scroll']);
 
 
 app.run(function($ionicPlatform,$rootScope,$ionicPopup,$q, $http, $rootScope, $location, $window, $timeout,RequestsService) {

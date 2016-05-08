@@ -19,9 +19,9 @@
   </ion-pane>
   
   <!--Drawer Changes-->
-  <drawer side="left" canDrag="true">
+  <drawer side="left" canDrag="true"  tap-detector>
 
-      <ion-content class="header-menu">
+      <ion-content class="header-menu" delegate-handle="mainScroll">
    
       <ion-list class="ion-list-padding">
          <div class="menu-line">
@@ -67,19 +67,19 @@
       
        <div class="menu-line">
 
-             <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(3)">
+             <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(2)">
          <i class="ion-android-calendar" id = "sidecons"></i>&nbsp;
         <span id = "sidetxt">  Events</span>
         </ion-item>
       </div>
        <div class="menu-line">
-            <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(4)">
+            <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(3)">
          <i class="ion-ios-briefcase" id = "sidecons"></i>&nbsp;
         <span id = "sidetxt">   Jobs</span>
         </ion-item>
       </div>
        <div class="menu-line">
-         <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(2)">
+         <ion-item nav-clear menu-and-drawer-close ng-click="changeSlideTo(4)">
          <i class="ion-android-car" id = "sidecons"></i> &nbsp;
          <span id = "sidetxt"> Traffic Update</span>
         </ion-item>

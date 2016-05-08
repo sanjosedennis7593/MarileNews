@@ -844,6 +844,26 @@ color: black;
   margin-left:14px;
   width:98%;
 }
+.newsletter-border-image{
+  border:10px solid #2e2e2e;
+  background-color: #2e2e2e;
+}
+.job-footer{
+    z-index: 29;
+  background: rgba(000,000,000,1);
+   background: rgb(000,000,000,1); 
+  color:white;
+  width:100%;
+bottom: 80px;
+  position: absolute;
+ 
+  font-size:100%;
+  font-family: 'Helvetica Neue LT Std';
+  padding:5px;
+   min-height: 1.25em;
+  line-height: 1.25;
+  text-align: left;
+}
 #putin{
   margin-top: 10px;
   background-color: white;
@@ -2509,7 +2529,7 @@ text-align:left;
 }
 .slider-content-news{
   position: relative;
-  top: 38px;
+  top: 0px;
 }
 
 .program-slider-content{
@@ -2528,7 +2548,7 @@ text-align:left;
 }
 .slider-content-event{
   position: relative;
-  top:0px;
+  top:-34px;
 }
 .job-slider-content{
   position: relative;
@@ -2564,8 +2584,8 @@ text-align:left;
 }
 .newsfeed .news-image-title{
   z-index: 9;
-  background-color:#000;
-  opacity: 0.8;
+  background: rgba(000,000,000,0.9);
+   background: rgb(000,000,000,0.9); 
   color:white;
   width:100%;
   bottom:27px;
@@ -2619,7 +2639,7 @@ text-align:left;
 .news-content-padding{
   position: relative;
   top:-39px;
-  padding-bottom:124px;
+
 }
 
 .traffic-label-header{
@@ -2628,12 +2648,22 @@ text-align:left;
 .traffic-content{
     border-bottom: 5px dotted #a6a6a6;
 }
-
+.newsletter-link{
+  color:white;
+  text-decoration: none;
+}
 .label-header-color{
 
    font-weight: bolder;
      font-family: 'Helvetica Neue LT Std';
      color:#3c3b83;
+}
+.newsletter-label-header-color{
+
+   font-weight: bolder;
+     font-family: 'Helvetica Neue LT Std';
+     color:white;
+
 }
 .newsletter-label{
   position: absolute;
@@ -2649,7 +2679,7 @@ min-width: 46.2%;
 }
 
 .newsletter-height{
-  height:240px;
+  height:200px;
 
 
 }
@@ -2686,6 +2716,7 @@ width:100%;
   padding:2px;
 }
 
+
 .news-image-title .news-date2{
 
   position: absolute;
@@ -2695,12 +2726,17 @@ width:100%;
   font-weight: bolder;
   color:white;
   font-size: 100%;
-  background-color:black;
-  opacity: 0.9;
+
+  background: rgba(000,000,000,0.9);
+   background: rgb(000,000,000,0.9); /* Fallback for older browsers without RGBA-support */
+
   min-width:23%;
   height:25px;
   display:inline-block;
-  padding:2px;
+  padding-left:3px;
+  padding-top: 4px;
+  padding-right: 3px;
+  padding-bottom: 1.5px;
 
 }
 .event-label .event-date-label{
@@ -2784,7 +2820,7 @@ width:100%;
 }
 .bar-modal .span-header{
 
-  
+  font-family: 'Helvetica Neue LT Std';
   width:90%;
 }
 .bar-modal .bar-modal-header .bar-modal-close{

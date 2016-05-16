@@ -1580,10 +1580,11 @@ $scope.loggedInUser = {};
           }
       });
 
+
+
    
 }])
 
-.controller('')
 
 .directive('onFinishRender', function ($timeout) {
     return {
@@ -1776,6 +1777,8 @@ $scope.loggedInUser = {};
           //console.log("horizontal move");
             $ionicScrollDelegate.$getByHandle('mainScroll').freezeScroll(true);
             }
+
+            
         }
       });
 

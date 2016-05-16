@@ -12124,8 +12124,8 @@ IonicModule
  */
 IonicModule
 .directive('ionSlideBox', [
-  '$timeout',
-  '$compile',
+  '$timeout'
+,  '$compile',
   '$ionicSlideBoxDelegate',
   '$ionicHistory',
 function($timeout, $compile, $ionicSlideBoxDelegate, $ionicHistory) {

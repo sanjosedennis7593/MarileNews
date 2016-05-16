@@ -7,10 +7,10 @@
 </ion-tabs>
 
 -->
-  <ion-content scroll="false" class="homepage-content">
+  <ion-content scroll="false" class="homepage-content" has-bouncing="false">
 
-      <tab-slide-box id = "slidescon">
-                    <ion-scroll class="tsb-icons"  id = "linej" scrollbar-x="false" direction="x">
+      <tab-slide-box id = "slidescon" >
+                    <ion-scroll class="tsb-icons"  id = "linej" scrollbar-x="false" direction="x" has-bouncing="false">
                         <div class="tsb-ic-wrp">
                             <a href="javascript:;" id="tablinks"><span >HOME</span></a>
                             <a href="javascript:;" id="tablinks"><span>NEWS</span></a>
@@ -30,11 +30,11 @@
               
 
 
-                    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged(index)" active-slide="activeSlide" class="slide-background" does-continue="false"  >
+                    <ion-slide-box show-pager="false"on-slide-changed="slideHasChanged(index)"  active-slide="activeSlide" class="slide-background" does-continue="false"  >
 
-                        <ion-slide class="slide-background" tap-detector dynamic-height>
+                        <ion-slide class="slide-background" tap-detector dynamic-height has-bouncing="false">
                         <br>
-                                     <ion-scroll class="slider-content-main" ng-controller="MainCtrl" overflow-scroll="true"  delegate-handle="mainScroll">
+                                     <ion-scroll has-bouncing="false" locking="true" class="slider-content-main" ng-controller="MainCtrl" overflow-scroll="true"  delegate-handle="mainScroll">
                  
 
   <!-- <ion-spinner class="loading-spinner" icon="spiral" ng-hide="eventFlag==false"></ion-spinner> -->
@@ -96,8 +96,8 @@
 </ion-scroll>
                         </ion-slide>
                     
-                    <ion-slide class="slide-background" tap-detector dynamic-height>
-                    <ion-content class="slider-content-news" ng-controller="NewsCtrl" delegate-handle="mainScroll">
+                    <ion-slide has-bouncing="false" class="slide-background" tap-detector dynamic-height>
+                    <ion-scroll has-bouncing="false" locking="true" overflow-scroll="true" class="slider-content-news" ng-controller="NewsCtrl" delegate-handle="mainScroll">
                    
                     <div class="news-content-padding">
 
@@ -125,11 +125,11 @@
 
                     <ion-spinner class="loading-spinner" icon="spiral" ng-hide="loadingScroll==false"></ion-spinner>
 <ion-infinite-scroll ng-if="!noMoreAvailable()" on-infinite="loadMore()" icon="ion-load-c" distance="1%"></ion-infinite-scroll>
-</ion-content>
+</ion-scroll>
                         </ion-slide>
 
-                         <ion-slide class="slide-background" tap-detector dynamic-height>
-        <ion-scroll class="slider-content-event" ng-controller="EventCtrl" delegate-handle="mainScroll">                   
+                         <ion-slide  has-bouncing="false" class="slide-background" tap-detector dynamic-height>
+        <ion-scroll has-bouncing="false" locking="true" overflow-scroll="true" class="slider-content-event" ng-controller="EventCtrl" delegate-handle="mainScroll">                   
  
 
    <ion-spinner class="loading-spinner" icon="spiral" ng-hide="eventFlag==false"></ion-spinner>
@@ -163,13 +163,13 @@
 </ion-scroll>
                         </ion-slide>
 
-                          <ion-slide  tap-detector dynamic-height-jobs>
+                          <ion-slide has-bouncing="false" locking="true" overflow-scroll="true"  tap-detector dynamic-height-jobs>
                        
                           <div class="job-footer">
 For interested applicants, you can visit the Public Employement Service Office located at the New Municipal Bldg. NLEX Northbound,Patubig, Marilao, Bulacan or contact 0900000000.
 </div>
 
-  <ion-scroll class="job-slider-content" ng-controller="JobsCtrl" delegate-handle="mainScroll">
+  <ion-scroll has-bouncing="false" class="job-slider-content" ng-controller="JobsCtrl" delegate-handle="mainScroll">
  
   <ion-spinner class="loading-spinner" icon="spiral" ng-hide="jobsFlag==false"></ion-spinner>
 <div class = "list" id = "jobsback" ng-show="jobsFlag==false">
@@ -218,9 +218,9 @@ For interested applicants, you can visit the Public Employement Service Office l
 </ion-slide>
 
                         
-                        <ion-slide ng-controller="TrafficCtrl" tap-detector dynamic-height>
+                        <ion-slide has-bouncing="false" ng-controller="TrafficCtrl" tap-detector dynamic-height>
                         <br> 
-                    <ion-scroll class="slider-content-traffic" delegate-handle="mainScroll">
+                    <ion-scroll has-bouncing="false" locking="true" overflow-scroll="true" class="slider-content-traffic" delegate-handle="mainScroll">
                 <div class="traffic-content-padding">
                   <ion-spinner class="loading-spinner" icon="spiral" ng-hide="flag==false"></ion-spinner>
   <!--
@@ -274,9 +274,9 @@ For interested applicants, you can visit the Public Employement Service Office l
               
                       
 
-                           <ion-slide tap-detector  dynamic-height>
+                           <ion-slide has-bouncing="false" tap-detector  dynamic-height>
                           
-  <ion-scroll class="program-slider-content" ng-controller="ProgramCtrl" delegate-handle="mainScroll">
+  <ion-scroll  has-bouncing="false" class="program-slider-content" overflow-scroll="true" locking="true" ng-controller="ProgramCtrl" delegate-handle="mainScroll">
                  
 
    <ion-spinner class="loading-spinner" icon="spiral"></ion-spinner>
@@ -304,9 +304,9 @@ For interested applicants, you can visit the Public Employement Service Office l
 </ion-scroll>
                         </ion-slide>
 
-                         <ion-slide tap-detector dynamic-height>
+                         <ion-slide has-bouncing="false" tap-detector dynamic-height>
                           <br>
-  <ion-scroll class="job-slider-content" ng-controller="WeatherListCtrl" delegate-handle="mainScroll">
+  <ion-scroll has-bouncing="false" locking="true" overflow-scroll="true" class="job-slider-content" ng-controller="WeatherListCtrl" delegate-handle="mainScroll">
   
     <div class="list">
       <center>
@@ -361,8 +361,8 @@ For interested applicants, you can visit the Public Employement Service Office l
                         </ion-slide>
 
 
-     <ion-slide class="slide-background" tap-detector dynamic-height>
-                                     <ion-scroll class="slider-content-feedback" ng-controller="LoginCtrl" delegate-handle="mainScroll">
+     <ion-slide has-bouncing="false" class="slide-background" tap-detector dynamic-height>
+                                     <ion-scroll has-bouncing="false" overflow-scroll="true" locking="true" class="slider-content-feedback" ng-controller="LoginCtrl" delegate-handle="mainScroll">
                                       <div class="list card" id = "cfed">
 
 

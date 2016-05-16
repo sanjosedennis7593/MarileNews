@@ -1771,7 +1771,7 @@ window.ionic.version = '1.0.0-rc.1';
       drag_block_vertical     : true,
       // drag_lock_to_axis keeps the drag gesture on the axis that it started on,
       // It disallows vertical directions if the initial direction was horizontal, and vice versa.
-      drag_lock_to_axis       : true,
+      drag_lock_to_axis       : false,
       // drag lock only kicks in when distance > drag_lock_min_distance
       // This way, locking occurs only when the distance has become large enough to reliably determine the direction
       drag_lock_min_distance : 25
@@ -1786,9 +1786,6 @@ window.ionic.version = '1.0.0-rc.1';
         ev.srcEvent.preventDefault();
         this.preventedFirstMove = true;
       }
-
-
-
 
       // current gesture isnt drag, but dragged is true
       // this means an other gesture is busy. now call dragend
@@ -2975,7 +2972,6 @@ function tapTouchEnd(e) {
 }
 
 function tapTouchMove(e) {
-  
   if (tapHasPointerMoved(e)) {
     tapPointerMoved = true;
     tapEventListener(tapTouchMoveListener, false);
@@ -7020,9 +7016,8 @@ ionic.scroll = {
       var self = this, content, buttons;
 
       if (Math.abs(e.gesture.deltaY) > 5) {
-        self._didDragUpOrDown = false;
+        self._didDragUpOrDown = true;
       }
-
 
       // If we get a drag event, make sure we aren't in another drag, then check if we should
       // start one
@@ -7504,14 +7499,7 @@ ionic.views.Slider = ionic.views.View.inherit({
 
           } else {
 
-            delta.x =
-              delta.x /
-                ( (!index && delta.x > 0 ||         // if first slide and sliding left
-                  index == slides.length - 1 &&     // or if last slide and sliding right
-                  delta.x < 0                       // and if sliding at all
-                ) ?
-                ( Math.abs(delta.x) / width + 1 )      // determine resistance level
-                : 1 );                                 // no resistance if false
+         delta.x = (!index && delta.x > 0 || (index == slides.length - 1 && delta.x < 0)) ? 0 : delta.x;                      // no resistance if false
 
             // translate 1:1
             translate(index-1, delta.x + slidePos[index-1], 0);

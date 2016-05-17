@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
 
-var app = angular.module('starter', ['ionic', 'starter.controllers','firebase','cfp.loadingBar','ionic.contrib.drawer','angular-preload-image','infinite-scroll']);
+var app = angular.module('starter', ['ionic', 'starter.controllers','firebase','cfp.loadingBar','ionic.contrib.drawer','angular-preload-image','infinite-scroll','ngCordova']);
 
 
 app.run(function($ionicPlatform,$rootScope,$ionicPopup,$q, $http, $rootScope, $location, $window, $timeout,RequestsService) {
@@ -348,13 +348,13 @@ $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
         url:'/newsletter',
         views:{
             'menuContent':{
-                templateUrl:'templates/newsletter.html'
+                templateUrl:'templates/newsletter.html',
+                controller:'NewsLetterCtrl'
             }
         }
      })
     ;
 
-    // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/homepage');
 })
 

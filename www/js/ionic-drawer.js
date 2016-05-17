@@ -59,7 +59,7 @@ angular.module('ionic.contrib.drawer', ['ionic'])
     $ionicBody.addClass('drawer-open');
   };
 
-  var startTargetDrag = function(e) {
+  var startTargetDrag = function(e) {z
     disableAnimation();
 
     dragging = true;
@@ -69,6 +69,7 @@ angular.module('ionic.contrib.drawer', ['ionic'])
   };
 
   var doEndDrag = function(e) {
+
     startX = null;
     lastX = null;
     offsetX = null;
@@ -100,6 +101,7 @@ angular.module('ionic.contrib.drawer', ['ionic'])
   };
 
   var doEndContentDrag = function(e) {
+   
     if (startX > lastX){
       startX = null;
       lastX = null;
@@ -133,13 +135,18 @@ angular.module('ionic.contrib.drawer', ['ionic'])
     }
 
 
-
-    if(!lastX) {
-      startX = width;
-
+  if(!lastX) {
+      if (side){
+        startX = docWidth - e.gesture.touches[0].pageX;
+      }else{
+        startX = e.gesture.touches[0].pageX;
+      }
     }
-    if(!lastY) {
-      startY = e.gesture.touches[0].pageY;
+
+    if (side){
+      lastX = docWidth - e.gesture.touches[0].pageX;
+    }else {
+      lastX = e.gesture.touches[0].pageX;
     }
 
     lastX = e.gesture.touches[0].pageX;

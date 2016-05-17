@@ -122,6 +122,69 @@ angular.module('starter.controllers', ['ionic','firebase','cfp.loadingBar'])
 
 })
 
+.controller("NewsLetterCtrl", function ($scope,$cordovaFileTransfer,$cordovaFacebook){
+
+  $scope.downloadStatus = {};
+ 
+
+var folderName = 'xyz';
+var fileName;
+
+$scope.downloadFile = function (URL) {
+    //step to request a file system 
+    window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, fileSystemSuccess, fileSystemFail);
+    alert(URL);
+    function fileSystemSuccess(fileSystem) {
+        var download_link = encodeURI(URL);
+        alert(download_link);
+        fileName = download_link.substr(download_link.lastIndexOf('/') + 1); //Get filename of URL
+        var directoryEntry = fileSystem.root; // to get root path of directory
+        directoryEntry.getDirectory(folderName, {
+            create: true,
+            exclusive: false
+        }, onDirectorySuccess, onDirectoryFail); // creating folder in sdcard
+        var rootdir = fileSystem.root;
+        var fp = fileSystem.root.toNativeURL(); // Returns Fullpath of local directory
+
+        fp = fp + "/" + folderName + "/" + fileName; // fullpath and name of the file which we want to give
+        // download function call
+        filetransfer(download_link, fp);
+    }
+
+    function onDirectorySuccess(parent) {
+        // Directory created successfuly
+    }
+
+    function onDirectoryFail(error) {
+        //Error while creating directory
+        alert("Unable to create new directory: " + error.code);
+
+    }
+
+    function fileSystemFail(evt) {
+        //Unable to access file system
+        alert(evt.target.error.code);
+    }
+}
+
+function filetransfer(download_link, fp) {
+    var fileTransfer = new FileTransfer();
+    // File download function with URL and local path
+    alert(download_link);
+    fileTransfer.download(download_link, fp,
+        function(entry) {
+            alert("download complete: " + entry.fullPath);
+        },
+        function(error) {
+            //Download abort errors or download failed errors
+            alert("download error source " + error.source);
+        }
+    );
+}
+
+
+
+})
 
 
 
@@ -294,7 +357,7 @@ $scope.newsFlag = true;
   // create a synchronized array on scope
   $scope.items = $firebaseArray(scrollRef);
   // load the first three contacts
-  scrollRef.scroll.next(3);
+  scrollRef.scroll.next(5);
 
   // This function is called whenever the user reaches the bottom
   $scope.loadMore = function() {
@@ -1615,7 +1678,7 @@ $scope.loggedInUser = {};
           $ta.addClass("btm");
         }
         scope.initialIndex = indexFactory.getIndex();
-        //Handle multiple slide/scroll boxes
+  
         var handle = ta.querySelector('.slider').getAttribute('delegate-handle');
         
         var ionicSlideBoxDelegate = $ionicSlideBoxDelegate;
@@ -1753,6 +1816,8 @@ $scope.loggedInUser = {};
 
   } 
 ])
+
+
 
 .directive('tapDetector',function($ionicGesture,$ionicScrollDelegate){
   return{

@@ -348,8 +348,7 @@ $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
         url:'/newsletter',
         views:{
             'menuContent':{
-                templateUrl:'templates/newsletter.html',
-                controller:'NewsLetterCtrl'
+                templateUrl:'templates/newsletter.html'
             }
         }
      })
